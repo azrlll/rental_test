@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveSphere - About Us</title>
+    <link rel="stylesheet" href="css/global.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/DriveSphere_logo.jpg" alt="DriveSphere Logo"> <span>DriveSphere</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="rental.html">Rental</a>
+                <a href="fleet.html">Fleet</a>
+                <a href="about.html" class="active">About</a>
+                <a href="help.html">Help</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-primary">Book a Vehicle</button>
+                <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+                
+                <!-- Interactive Account Dropdown Wrapper -->
+                <div class="account-wrapper">
+                    <!-- Added inline onclick to guarantee the menu opens -->
+                    <button class="account-trigger" id="accountTrigger" onclick="document.getElementById('accountDropdown').classList.toggle('show'); this.classList.toggle('active'); event.stopPropagation();">
+                        <img src="" alt="User Avatar" class="avatar-img">
+                        <div class="acc-trigger-text">
+                            <strong>Account</strong>
+                            <span>Active Session</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down chevron-icon"></i>
+                    </button>
+
+                    <!-- The Dropdown Modal -->
+                    <div class="account-dropdown" id="accountDropdown">
+                        <div class="dropdown-header">
+                            <div>
+                                <div class="dh-title">
+                                    <h3>Account Selection</h3>
+                                    <div class="dh-title">
+                                </div>
+                                </div>
+                                <p>Sign in to manage reservations, corporate fleet billing, or driver telematics across the Philippines.</p>
+                            </div>
+                            <!-- Added inline onclick to close the menu -->
+                            <button class="close-dropdown" onclick="document.getElementById('accountDropdown').classList.remove('show'); document.getElementById('accountTrigger').classList.remove('active');"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        
+                        <div class="dropdown-body">
+                            <!-- Fleet Account Card -->
+                            <div class="login-card">
+                                <div class="lc-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                                <div class="lc-content">
+                                    <div class="lc-top">
+                                        <h4>Fleet Account</h4>
+                                        <span class="lc-badge dark">Admin Portal</span>
+                                    </div>
+                                    <span class="lc-link-text"><i class="fa-solid fa-arrow-right-to-bracket"></i> Leads to Admin Login</span>
+                                    <p>For Fleet Managers, System Administrators, & Operations Dispatchers monitoring telemetry and corporate rentals.</p>
+                                    <a href="admin-login.html" class="lc-action">Sign in as Admin <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+
+                            <!-- User Account Card -->
+                            <div class="login-card">
+                                <div class="lc-icon"><i class="fa-solid fa-car-side"></i></div>
+                                <div class="lc-content">
+                                    <div class="lc-top">
+                                        <h4>User Account</h4>
+                                        <span class="lc-badge light">Customer Portal</span>
+                                    </div>
+                                    <span class="lc-link-text"><i class="fa-solid fa-arrow-right-to-bracket"></i> Leads to Customer Login</span>
+                                    <p>For Individual Renters, Corporate Clients, & VIP Travelers managing personal bookings and fast pick-up passes.</p>
+                                    
+                                    <!-- UPDATED LINK HERE -->
+                                    <a href="login.html" class="lc-action">Sign in as Customer <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-footer">
+                            
+                            <!-- UPDATED LINK HERE -->
+                            <div class="df-left">New to DriveSphere? <a href="register.html">Register here</a></div>
+                            
+                            <div class="df-links">
+                                <a href="#">Forgot password?</a>
+                                <span class="dot">•</span>
+                                <a href="#">Corporate Access</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Hero Section -->
+        <section class="about-hero">
+            <div class="container">
+                <div class="about-hero-text">
+                    <div class="badge-text-blue" style="color: #60a5fa;">CORPORATE DOSSIER | ABOUT DRIVESPHERE</div>
+                    <h1>Redefining Mobility & Fleet Excellence Across the Philippines</h1>
+                    <p>Founded with a mission to deliver transparent, technology-enabled, and uncompromising vehicle rental experiences for individuals, enterprises, and VIP delegations nationwide.</p>
+                </div>
+
+                <div class="about-stats-grid">
+                    <div class="a-stat-card">
+                        <span class="a-stat-label"><i class="fa-solid fa-clock-rotate-left"></i> TRACK RECORD</span>
+                        <h3>5+ Years</h3>
+                        <p>Serving Metro Manila & Key Provinces</p>
+                    </div>
+                    <div class="a-stat-card">
+                        <span class="a-stat-label"><i class="fa-solid fa-thumbs-up"></i> RELIABILITY</span>
+                        <h3>99.4%</h3>
+                        <p>On-Time Handover & Dispatch Rate</p>
+                    </div>
+                    <div class="a-stat-card">
+                        <span class="a-stat-label"><i class="fa-solid fa-car-side"></i> ACTIVE FLEET</span>
+                        <h3>150+</h3>
+                        <p>Certified, OEM-Maintained Vehicles</p>
+                    </div>
+                    <div class="a-stat-card">
+                        <span class="a-stat-label"><i class="fa-solid fa-route"></i> EXECUTION</span>
+                        <h3>12,000+</h3>
+                        <p>Journeys Completed Flawlessly</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section class="mission-section">
+            <div class="container mission-grid">
+                <div class="mission-left">
+                    <div class="badge badge-light-blue"><i class="fa-solid fa-bullseye"></i> OUR MISSION & VISION</div>
+                    <h2>A Modern Mobility Platform Built on Integrity and Precision Engineering</h2>
+                </div>
+                <div class="mission-right">
+                    <p>DriveSphere bridges the gap between traditional car rentals and modern digital fleet intelligence. Whether providing executive chauffeur services for MNC board meetings in Bonifacio Global City or self-drive utility 4x4s for provincial expeditions across Luzon and the Visayas, we hold every vehicle to rigorous OEM-grade standards.</p>
+                    <div class="core-values-grid">
+                        <div class="value-box">
+                            <i class="fa-solid fa-gears"></i>
+                            <h4>OEM Rigor</h4>
+                            <p>Scheduled factory inspections strictly aligned with certified manufacturer tolerances.</p>
+                        </div>
+                        <div class="value-box">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                            <h4>Zero Friction</h4>
+                            <p>App-based verification, transparent digital contracts, and swift auto handovers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Commitment Split Layouts -->
+        <section class="split-sections">
+            <!-- Split 1: Image Left, Text Right -->
+            <div class="container split-row">
+                <div class="split-col img-col">
+                    <div class="split-image-placeholder">
+                        <div class="bottom-tag"><i class="fa-solid fa-spray-can-sparkles"></i> <strong>Ozone Sterilized</strong></div>
+                    </div>
+                </div>
+                <div class="split-col text-col padding-left">
+                    <div class="badge badge-light-blue">OUR COMMITMENT TO STANDARD</div>
+                    <h2>Automated Telemetry & Hospital-Grade Sanitization</h2>
+                    <p>Every vehicle in our fleet is integrated with real-time OBD-II health diagnostic sensors and undergoes hospital-grade interior ozone decontamination prior to handover. Our customers never worry about maintenance history, hidden mechanical wear, or cleanliness.</p>
+                    <ul class="custom-bullets">
+                        <li><i class="fa-regular fa-circle-check"></i> Real-time tire pressure & brake pad monitoring synced to dispatch systems.</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Contactless lockbox or white-glove airport curb handovers across NAIA Terminals & Clark.</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Transparent zero-surprise fuel and comprehensive CDW insurance policies.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Split 2: Text Left, Image Right -->
+            <div class="container split-row reverse">
+                <div class="split-col text-col padding-right">
+                    <div class="badge badge-light-blue">ISLAND-WIDE EXPANSION</div>
+                    <h2>Strategic Mobility Hubs Across Key Metropolises</h2>
+                    <p>Operating from central hubs in BGC Taguig, Makati, Clark Freeport, and Cebu IT Park, DriveSphere provides rapid regional mobilization. Our dedicated roadside rescue network ensures no driver is ever stranded.</p>
+                    <ul class="custom-bullets">
+                        <li><i class="fa-regular fa-circle-check"></i> 24/7 dedicated bilingual dispatch hotline with localized road mechanics.</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Instant replacement vehicle guarantee within 90 minutes in Metro Manila.</li>
+                        <li><i class="fa-regular fa-circle-check"></i> Corporate fleet invoicing and bespoke multi-vehicle leasing contracts.</li>
+                    </ul>
+                </div>
+                <div class="split-col img-col">
+                    <div class="split-image-placeholder">
+                        <div class="bottom-tag right-tag"><i class="fa-solid fa-building"></i> <strong>4 Regional Hubs</strong></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pillars Section -->
+        <section class="pillars-section">
+            <div class="container text-center">
+                <div class="badge-text-gray">OUR PRINCIPLES</div>
+                <h2 class="section-title">The Pillars of DriveSphere Integrity</h2>
+                <p class="section-subtitle">Engineered to instill complete confidence on every commercial or recreational journey.</p>
+                
+                <div class="pillars-grid">
+                    <div class="pillar-card">
+                        <div class="p-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h4>Uncompromising Safety</h4>
+                        <p>40-point mechanics certification before every single rental handover covering internals, braking, and safety telemetry.</p>
+                        <span class="p-link">CERTIFIED PROTOCOL</span>
+                    </div>
+                    <div class="pillar-card">
+                        <div class="p-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <h4>Radical Transparency</h4>
+                        <p>All inclusive rates quoted in Philippine Pesos (₱) with zero hidden handover surcharges or undisclosed admin fees.</p>
+                        <span class="p-link">ZERO HIDDEN FEES</span>
+                    </div>
+                    <div class="pillar-card">
+                        <div class="p-icon"><i class="fa-solid fa-bell-concierge"></i></div>
+                        <h4>Client-First Concierge</h4>
+                        <p>24/7 localized support, VIP divider greeters, and dedicated enterprise account managers tailored to corporate needs.</p>
+                        <span class="p-link">VIP ASSISTANCE</span>
+                    </div>
+                    <div class="pillar-card">
+                        <div class="p-icon"><i class="fa-solid fa-leaf"></i></div>
+                        <h4>Sustainable Mobility</h4>
+                        <p>Actively growing hybrid and low-emission fleet options to support greener corporate ESG operations across Luzon.</p>
+                        <span class="p-link">ESG FORWARD</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ecosystem Section -->
+        <section class="ecosystem-section">
+            <div class="container">
+                <div class="badge-text-gray">STRATEGIC INITIATIVES</div>
+                <h2 class="section-title text-left">Deep Dive into DriveSphere Ecosystem</h2>
+                
+                <div class="eco-grid">
+                    <div class="eco-card">
+                        <div class="eco-img placeholder-bg">
+                            <span class="eco-tag">Operations & Tech</span>
+                        </div>
+                        <div class="eco-content">
+                            <h4>Leadership & Fleet Engineering Team</h4>
+                            <p>Meet the certified technicians and operations directors behind DriveSphere's spotless track record and stringent mechanical oversight.</p>
+                            <a href="#" class="eco-link">Meet the Team <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="eco-card">
+                        <div class="eco-img placeholder-bg">
+                            <span class="eco-tag">Enterprise Solutions</span>
+                        </div>
+                        <div class="eco-content">
+                            <h4>Corporate Fleet Partnerships</h4>
+                            <p>Customized corporate mobility agreements, tax invoicing, and long-term executive leasing for enterprise businesses and institutions.</p>
+                            <a href="#" class="eco-link">Corporate Solutions <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="eco-card">
+                        <div class="eco-img placeholder-bg">
+                            <span class="eco-tag">Vision 2028</span>
+                        </div>
+                        <div class="eco-content">
+                            <h4>Sustainability & Future Initiatives</h4>
+                            <p>Our roadmap toward hybrid and electric vehicle fleet integration across Metro Manila by 2028 to foster zero-emission transport.</p>
+                            <a href="#" class="eco-link">Read Our Roadmap <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About CTA -->
+        <section class="about-cta-section">
+            <div class="container">
+                <div class="about-cta-box">
+                    <div class="cta-left">
+                        <span class="badge-text-blue" style="color: #60a5fa;">GET IN TOUCH</span>
+                        <h2>Ready to Elevate Your Fleet Mobility?</h2>
+                        <p>Whether you need an individual weekend 4x4 in Cebu or an entire corporate fleet in Metro Manila, our concierge specialists are ready 24/7.</p>
+                    </div>
+                    <div class="cta-right">
+                        <button class="btn btn-primary btn-large">Explore Available Fleet</button>
+                        <button class="btn btn-white btn-large">Contact Concierge</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col brand-col">
+                    <div class="footer-logo">
+                        <i class="fa-solid fa-car-side"></i> <span>DriveSphere</span>
+                    </div>
+                    <p>Your Premier Philippine Vehicle Rental & Smart Fleet Management Platform</p>
+                    <div class="social-links">
+                        <div class="social-icon-placeholder"><i class="fa-brands fa-facebook-f"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-solid fa-share-nodes"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-regular fa-envelope"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-regular fa-star"></i></div>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>ABOUT US</h4>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Fleet Network</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>LEGAL & COMPLIANCE</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="policies.html">Privacy Policy</a></li>
+                        <li><a href="#">Rental Agreement</a></li>
+                        <li><a href="#">Insurance Coverage</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>GET HELP</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">24/7 Roadside Assistance</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
+                        <li><a href="#">Branch Locations</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-middle">
+                <div class="contact-info">
+                    <span><i class="fa-solid fa-phone"></i> 24/7 Hotline: <strong>(02) 8888-DRIVE</strong></span>
+                    <span><i class="fa-regular fa-envelope"></i> support@drivesphere.ph</span>
+                    <span><i class="fa-solid fa-location-dot"></i> BGC, Taguig City, Philippines</span>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">© 2026 DriveSphere Philippines Inc. All rights reserved.</div>
+                <div class="footer-bottom-links">
+                    <span>Enterprise Fleet Reliability</span> • <span>Island-Wide Mobility</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

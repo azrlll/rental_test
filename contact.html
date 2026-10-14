@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveSphere - Contact Support</title>
+    <link rel="stylesheet" href="css/global.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/DriveSphere_logo.jpg" alt="DriveSphere Logo"> <span>DriveSphere</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="rental.html">Rental</a>
+                <a href="fleet.html">Fleet</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-primary">Book a Vehicle</button>
+                <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+                
+                <!-- Interactive Account Dropdown Wrapper -->
+                <div class="account-wrapper">
+                    <!-- Added inline onclick to guarantee the menu opens -->
+                    <button class="account-trigger" id="accountTrigger" onclick="document.getElementById('accountDropdown').classList.toggle('show'); this.classList.toggle('active'); event.stopPropagation();">
+                        <img src="" alt="User Avatar" class="avatar-img">
+                        <div class="acc-trigger-text">
+                            <strong>Account</strong>
+                            <span>Active Session</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down chevron-icon"></i>
+                    </button>
+
+                    <!-- The Dropdown Modal -->
+                    <div class="account-dropdown" id="accountDropdown">
+                        <div class="dropdown-header">
+                            <div>
+                                <div class="dh-title">
+                                    <h3>Account Selection</h3>
+                                    <div class="dh-title">
+                                </div>
+                                </div>
+                                <p>Sign in to manage reservations, corporate fleet billing, or driver telematics across the Philippines.</p>
+                            </div>
+                            <!-- Added inline onclick to close the menu -->
+                            <button class="close-dropdown" onclick="document.getElementById('accountDropdown').classList.remove('show'); document.getElementById('accountTrigger').classList.remove('active');"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        
+                        <div class="dropdown-body">
+                            <!-- Fleet Account Card -->
+                            <div class="login-card">
+                                <div class="lc-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                                <div class="lc-content">
+                                    <div class="lc-top">
+                                        <h4>Fleet Account</h4>
+                                        <span class="lc-badge dark">Admin Portal</span>
+                                    </div>
+                                    <span class="lc-link-text"><i class="fa-solid fa-arrow-right-to-bracket"></i> Leads to Admin Login</span>
+                                    <p>For Fleet Managers, System Administrators, & Operations Dispatchers monitoring telemetry and corporate rentals.</p>
+                                    <a href="admin-login.html" class="lc-action">Sign in as Admin <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+
+                            <!-- User Account Card -->
+                            <div class="login-card">
+                                <div class="lc-icon"><i class="fa-solid fa-car-side"></i></div>
+                                <div class="lc-content">
+                                    <div class="lc-top">
+                                        <h4>User Account</h4>
+                                        <span class="lc-badge light">Customer Portal</span>
+                                    </div>
+                                    <span class="lc-link-text"><i class="fa-solid fa-arrow-right-to-bracket"></i> Leads to Customer Login</span>
+                                    <p>For Individual Renters, Corporate Clients, & VIP Travelers managing personal bookings and fast pick-up passes.</p>
+                                    
+                                    <!-- UPDATED LINK HERE -->
+                                    <a href="login.html" class="lc-action">Sign in as Customer <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-footer">
+                            
+                            <!-- UPDATED LINK HERE -->
+                            <div class="df-left">New to DriveSphere? <a href="register.html">Register here</a></div>
+                            
+                            <div class="df-links">
+                                <a href="#">Forgot password?</a>
+                                <span class="dot">•</span>
+                                <a href="#">Corporate Access</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="contact-main-bg">
+        <!-- Sub Navigation -->
+        <div class="contact-subnav">
+            <div class="container subnav-container">
+                <a href="help.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Help Center</a>
+                <div class="breadcrumbs">
+                    <span>Home</span> / <span>Help</span> / <strong>Contact Support</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <div class="container">
+                <div class="badge badge-light-blue"><i class="fa-solid fa-headset"></i> 24/7 CUSTOMER CONCIERGE & SUPPORT</div>
+                <h1 class="contact-title">Contact DriveSphere Support</h1>
+                <p class="contact-subtitle">Have a question about vehicle dispatch, airport handovers, corporate billing, or need roadside assistance? Send our team a message or reach out through our direct priority lines.</p>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <section class="contact-content-section">
+            <div class="container contact-grid">
+                
+                <!-- Left Column: Contact Form -->
+                <div class="contact-form-card">
+                    <div class="cf-header">
+                        <div>
+                            <h2>Send an Inquiry or Support Ticket</h2>
+                            <p>Our operations dispatch desk in BGC coordinates nationwide assistance and fleet telemetry monitoring.</p>
+                        </div>
+                        <span class="badge-time"><i class="fa-solid fa-bolt"></i> ~15 min response</span>
+                    </div>
+
+                    <form class="support-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name <span>*</span></label>
+                                <input type="text" placeholder="e.g. Juan Dela Cruz" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Corporate / Personal Email <span>*</span></label>
+                                <input type="email" placeholder="e.g. juan.delacruz@company.ph" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Philippine Mobile Number <span>(Optional)</span></label>
+                                <input type="tel" placeholder="+63 917 123 4567">
+                            </div>
+                            <div class="form-group">
+                                <label>Inquiry Topic <span>*</span></label>
+                                <select required>
+                                    <option value="" disabled selected>Select a dispatch topic...</option>
+                                    <option value="booking">Booking & Reservations</option>
+                                    <option value="roadside">Roadside Assistance</option>
+                                    <option value="billing">Billing & Corporate Invoicing</option>
+                                    <option value="other">Other Inquiry</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Detailed Message <span>*</span></label>
+                            <textarea rows="4" placeholder="Provide detailed information regarding your inquiry, booking reference number (e.g. DS-MNL-4820) if applicable, and preferred contact window..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Supporting Documents or Incident Photos <span>(Optional)</span></label>
+                            <div class="file-upload-box">
+                                <div class="file-info-left">
+                                    <div class="fu-icon"><i class="fa-solid fa-paperclip"></i></div>
+                                    <div class="fu-text">
+                                        <strong>Attach vehicle photo, fuel slip, or incident snapshot</strong>
+                                        <span>PNG, JPG, PDF up to 15MB</span>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-text">Browse File</button>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large submit-btn">Send Message <i class="fa-regular fa-paper-plane"></i></button>
+
+                        <div class="privacy-notice">
+                            <i class="fa-solid fa-lock"></i> Your inquiry is encrypted under Republic Act 10173 (Data Privacy Act of 2012) compliance.
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Column: Contact Info Cards -->
+                <div class="contact-info-col">
+                    
+                    <!-- Dispatch Desk Card -->
+                    <div class="info-card dispatch-card">
+                        <div class="dc-header">
+                            <span class="status-indicator"><span class="pulse-dot"></span> DISPATCH DESK ACTIVE</span>
+                            <span class="wait-time">Wait: < 2 mins</span>
+                        </div>
+                        <span class="dc-label">EMERGENCY 24/7 HOTLINE</span>
+                        <h3 class="dc-number">(02) 8888-DRIVE</h3>
+                        
+                        <div class="dc-subgrid">
+                            <div class="dc-subitem border-right">
+                                <span>Mobile Roadside Line</span>
+                                <strong>+63 917 888 3748</strong>
+                            </div>
+                            <div class="dc-subitem">
+                                <span>Dispatch Operations</span>
+                                <strong>support@drivesphere.ph</strong>
+                            </div>
+                        </div>
+
+                        <div class="dc-footer">
+                            <i class="fa-solid fa-walkie-talkie"></i>
+                            <div>
+                                <strong>Live Fleet Radio Support</strong>
+                                <span>Instant vehicle immobilizer and GPS unlock support.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Regional Hubs Card -->
+                    <div class="info-card hubs-card">
+                        <h3 class="card-title-icon"><i class="fa-solid fa-network-wired"></i> Regional Support Hubs</h3>
+                        
+                        <div class="hub-list">
+                            <div class="hub-item">
+                                <div class="hub-item-header">
+                                    <h4>Flagship Operations Hub</h4>
+                                    <span class="hub-tag">HQ</span>
+                                </div>
+                                <p>32nd Street cor. 5th Avenue, Bonifacio Global City (BGC), Taguig City, Metro Manila</p>
+                                <span class="hub-link"><i class="fa-regular fa-clock"></i> Open 24/7 for Fleet Inspection & Key Turnover</span>
+                            </div>
+
+                            <div class="hub-item">
+                                <div class="hub-item-header">
+                                    <h4>NAIA International Airport Bays</h4>
+                                    <span class="hub-tag">T1 / T2 / T3</span>
+                                </div>
+                                <p>Terminal 3 Arrival Flight Gate Bays & VIP Chauffeur Counter, Pasay City</p>
+                                <span class="hub-link"><i class="fa-solid fa-plane-arrival"></i> Express Handover & Luggage Loading</span>
+                            </div>
+
+                            <div class="hub-item">
+                                <div class="hub-item-header">
+                                    <h4>Cebu IT Park Operations Desk</h4>
+                                    <span class="hub-tag">Visayas</span>
+                                </div>
+                                <p>Skyrise Alpha, Salinas Drive, Lahug, Cebu City, Central Visayas</p>
+                                <span class="hub-link"><i class="fa-solid fa-map-location-dot"></i> Island Cross-Border Fleet Coordination</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Operations Windows Card -->
+                    <div class="info-card hours-card">
+                        <h3 class="card-title-icon"><i class="fa-regular fa-calendar-check"></i> Operational Service Windows</h3>
+                        <div class="hours-list">
+                            <p><strong>Self-Drive & Chauffeur Handover:</strong> 24 Hours / 7 Days a Week (Nationwide)</p>
+                            <p><strong>Administrative & BIR Invoicing:</strong> Monday – Friday, 8:00 AM – 6:00 PM (PHT)</p>
+                            <p><strong>Emergency Roadside Towing:</strong> Instant mobilization under 45 minutes across Metro Manila & Metro Cebu.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA Section -->
+        <section class="contact-cta-bar">
+            <div class="container ccta-container">
+                <div class="ccta-text">
+                    <h3>Looking for immediate self-service answers?</h3>
+                    <p>Check our verified knowledge base, security deposit refund guides, and vehicle rental agreement policies.</p>
+                </div>
+                <div class="ccta-buttons">
+                    <button class="btn btn-white btn-large"><i class="fa-regular fa-circle-question"></i> Browse FAQs</button>
+                    <!-- Redirects to policies.html per requested fix -->
+                    <button class="btn btn-primary btn-large" onclick="window.location.href='policies.html'"><i class="fa-solid fa-file-contract"></i> View Policies</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col brand-col">
+                    <div class="footer-logo">
+                        <i class="fa-solid fa-car-side"></i> <span>DriveSphere</span>
+                    </div>
+                    <p>Your Premier Philippine Vehicle Rental & Smart Fleet Management Platform</p>
+                    <div class="social-links">
+                        <div class="social-icon-placeholder"><i class="fa-brands fa-facebook-f"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-solid fa-share-nodes"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-regular fa-envelope"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-regular fa-star"></i></div>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>ABOUT US</h4>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="fleet.html">Fleet Network</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>LEGAL & COMPLIANCE</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <!-- UPDATED POLICY LINK -->
+                        <li><a href="policies.html">Privacy Policy</a></li>
+                        <li><a href="#">Rental Agreement</a></li>
+                        <li><a href="#">Insurance Coverage</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>GET HELP</h4>
+                    <ul>
+                        <li><a href="help.html">FAQs</a></li>
+                        <li><a href="#">24/7 Roadside Assistance</a></li>
+                        <li><a href="contact.html">Booking Support</a></li>
+                        <li><a href="#">Branch Locations</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-middle">
+                <div class="contact-info">
+                    <span><i class="fa-solid fa-phone"></i> 24/7 Hotline: <strong>(02) 8888-DRIVE</strong></span>
+                    <span><i class="fa-regular fa-envelope"></i> support@drivesphere.ph</span>
+                    <span><i class="fa-solid fa-location-dot"></i> BGC, Taguig City, Philippines</span>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">© 2026 DriveSphere Philippines Inc. All rights reserved.</div>
+                <div class="footer-bottom-links">
+                    <span>Enterprise Fleet Reliability</span> • <span>Island-Wide Mobility</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveSphere - Policies & Compliance</title>
+    <link rel="stylesheet" href="css/global.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/DriveSphere_logo.jpg" alt="DriveSphere Logo"> <span>DriveSphere</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="rental.html">Rental</a>
+                <a href="fleet.html">Fleet</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-primary">Book a Vehicle</button>
+                <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+                
+                <!-- Interactive Account Dropdown Wrapper -->
+                <div class="account-wrapper">
+                    <!-- Added inline onclick to guarantee the menu opens -->
+                    <button class="account-trigger" id="accountTrigger" onclick="document.getElementById('accountDropdown').classList.toggle('show'); this.classList.toggle('active'); event.stopPropagation();">
+                        <img src="" alt="User Avatar" class="avatar-img">
+                        <div class="acc-trigger-text">
+                            <strong>Account</strong>
+                            <span>Active Session</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down chevron-icon"></i>
+                    </button>
+
+                    <!-- The Dropdown Modal -->
+                    <div class="account-dropdown" id="accountDropdown">
+                        <div class="dropdown-header">
+                            <div>
+                                <div class="dh-title">
+                                    <h3>Account Selection</h3>
+                                    <div class="dh-title">
+                                </div>
+                                </div>
+                                <p>Sign in to manage reservations, corporate fleet billing, or driver telematics across the Philippines.</p>
+                            </div>
+                            <!-- Added inline onclick to close the menu -->
+                            <button class="close-dropdown" onclick="document.getElementById('accountDropdown').classList.remove('show'); document.getElementById('accountTrigger').classList.remove('active');"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        
+                        <div class="dropdown-body">
+                            <!-- Fleet Account Card -->
+                            <div class="login-card">
+                                <div class="lc-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                                <div class="lc-content">
+                                    <div class="lc-top">
+                                        <h4>Fleet Account</h4>
+                                        <span class="lc-badge dark">Admin Portal</span>
+                                    </div>
+                                    <span class="lc-link-text"><i class="fa-solid fa-arrow-right-to-bracket"></i> Leads to Admin Login</span>
+                                    <p>For Fleet Managers, System Administrators, & Operations Dispatchers monitoring telemetry and corporate rentals.</p>
+                                    <a href="admin-login.html" class="lc-action">Sign in as Admin <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+
+                            <!-- User Account Card -->
+                            <div class="login-card">
+                                <div class="lc-icon"><i class="fa-solid fa-car-side"></i></div>
+                                <div class="lc-content">
+                                    <div class="lc-top">
+                                        <h4>User Account</h4>
+                                        <span class="lc-badge light">Customer Portal</span>
+                                    </div>
+                                    <span class="lc-link-text"><i class="fa-solid fa-arrow-right-to-bracket"></i> Leads to Customer Login</span>
+                                    <p>For Individual Renters, Corporate Clients, & VIP Travelers managing personal bookings and fast pick-up passes.</p>
+                                    
+                                    <!-- UPDATED LINK HERE -->
+                                    <a href="login.html" class="lc-action">Sign in as Customer <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-footer">
+                            
+                            <!-- UPDATED LINK HERE -->
+                            <div class="df-left">New to DriveSphere? <a href="register.html">Register here</a></div>
+                            
+                            <div class="df-links">
+                                <a href="#">Forgot password?</a>
+                                <span class="dot">•</span>
+                                <a href="#">Corporate Access</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="policies-main-bg">
+        <!-- Page Header -->
+        <section class="policies-page-header">
+            <div class="container">
+                <div class="breadcrumbs">
+                    <span>Home</span> <i class="fa-solid fa-chevron-right"></i> <span>Legal & Compliance</span> <i class="fa-solid fa-chevron-right"></i> <strong>Policies</strong>
+                </div>
+                
+                <div class="ph-top-bar">
+                    <div class="ph-title-area">
+                        <div class="badge badge-light-blue"><i class="fa-solid fa-shield-halved"></i> DRIVESPHERE POLICIES 2026</div>
+                        <h1>Policies</h1>
+                        <p>Official regulatory terms, customer guidelines, operational safety protocols, and governance standards governing DriveSphere vehicle rentals and fleet operations in the Philippines.</p>
+                        
+                        <div class="ph-meta-tags">
+                            <span class="meta-tag"><i class="fa-regular fa-calendar"></i> Effective Date: January 1, 2026</span>
+                            <span class="meta-tag"><i class="fa-solid fa-code-branch"></i> Version 2.4</span>
+                            <span class="meta-tag"><i class="fa-solid fa-scale-balanced"></i> Applicable across Philippine Jurisdictions</span>
+                        </div>
+                    </div>
+                    <div class="ph-action-area">
+                        <button class="btn btn-dark btn-large"><i class="fa-solid fa-download"></i> Download Full PDF Policy Package</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content & Sidebar Layout -->
+        <section class="policies-layout">
+            <div class="container layout-grid">
+                
+                <!-- Sticky Sidebar -->
+                <aside class="policies-sidebar">
+                    <div class="sidebar-box toc-box">
+                        <div class="toc-header">
+                            <h4>TABLE OF CONTENTS</h4>
+                            <i class="fa-solid fa-list"></i>
+                        </div>
+                        <ul class="toc-menu">
+                            <li><a href="#article-1" class="active">1. Legal & Compliance <span>01</span></a></li>
+                            <li><a href="#article-2">2. Customer Rental Polici... <span>02</span></a></li>
+                            <li><a href="#article-3">3. Internal Fleet & Operat... <span>03</span></a></li>
+                            <li><a href="#article-4">4. Safety & Regulatory <span>04</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-box enforcement-box">
+                        <div class="e-icon"><i class="fa-solid fa-shield-check"></i></div>
+                        <h4>Verified Enforcement</h4>
+                        <p>All policies are enforced under ISO 9001:2015 fleet quality assurance and Philippine Department of Transportation (DOTr) guidelines.</p>
+                    </div>
+
+                    <div class="sidebar-box grade-box">
+                        <div class="grade-header">
+                            <span>FLEET SAFETY GRADE</span>
+                            <strong>99.8%</strong>
+                        </div>
+                        <div class="progress-track"><div class="progress-fill" style="width: 99.8%;"></div></div>
+                        <div class="grade-footer">
+                            <span>Audit Processed 48 Hours Ago</span>
+                            <span class="tag-green-small">Active</span>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Scrollable Content -->
+                <div class="policies-content">
+                    
+                    <!-- Intro Banner -->
+                    <div class="policy-intro-banner">
+                        <div class="pi-image placeholder-bg">
+                            <div class="pi-tag">BGC Headquarters</div>
+                        </div>
+                        <div class="pi-text">
+                            <span class="badge-text-gray">PHILIPPINE REGULATORY MANDATE</span>
+                            <h3>Integrated Fleet Legal Architecture</h3>
+                            <p>Every DriveSphere lease, daily rental, and enterprise account is backed by comprehensive statutory coverage, strict telemetry surveillance, and transparent contractual terms across Metro Manila, Luzon, Visayas, and Mindanao.</p>
+                        </div>
+                    </div>
+
+                    <!-- Article 1 -->
+                    <article id="article-1" class="policy-article">
+                        <div class="article-header">
+                            <span class="badge badge-light-blue">LEGAL & CORPORATE GOVERNANCE</span>
+                            <span class="article-num">ARTICLE I</span>
+                        </div>
+                        <h2>1. Legal & Compliance Policy</h2>
+                        
+                        <div class="policy-items-list">
+                            <div class="p-item">
+                                <h4>1.1 Enterprise Registration & Licensing</h4>
+                                <p>DriveSphere operates under full registration with the Philippine Securities and Exchange Commission (SEC) and the Land Transportation Franchising and Regulatory Board (LTFRB) for private tourist and commercial fleet leasing. All motorized commercial units hold valid franchise certifications, CPC permits, and comply with DOTr national emissions standards.</p>
+                            </div>
+                            <div class="p-item">
+                                <h4>1.2 Data Privacy Act Compliance (RA 10173)</h4>
+                                <p>Customer telemetry data, GPS tracking, and identification credentials are encrypted using AES-256 and processed solely for vehicle security, trip verification, and billing reconciliation. DriveSphere enforces strict non-disclosure policies and will never distribute, sell, or monetize information assets to unverified third parties.</p>
+                                <div class="sub-badge"><i class="fa-solid fa-lock"></i> National Privacy Commission (NPC) Certified Protocols</div>
+                            </div>
+                            <div class="p-item border-none">
+                                <h4>1.3 Tax Compliance & Invoicing</h4>
+                                <p>All vehicle hire rates include 12% Value-Added Tax (VAT) with Bureau of Internal Revenue (BIR) compliant Official Receipts issued electronically. Enterprise corporate clients may request creditable withholding tax certificates (BIR Form 2307) during digital settlement and monthly invoicing reconciliation.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article id="article-2" class="policy-article">
+                        <div class="article-header">
+                            <span class="badge badge-light-blue">RENTER RIGHTS & OBLIGATIONS</span>
+                            <span class="article-num">ARTICLE II</span>
+                        </div>
+                        <h2>2. Customer-Facing Rental Policies</h2>
+                        
+                        <div class="policy-grid-2x2">
+                            <div class="p-grid-item">
+                                <h4><i class="fa-regular fa-id-card"></i> 2.1 Eligibility & Documentation</h4>
+                                <p>Primary drivers must be at least 21 years of age and hold an unexpired Professional or Non-Professional driver's license with at least 1 year of driving validity. Two valid government IDs and a major credit card or digital e-wallet are mandatory upon vehicle dispatch.</p>
+                            </div>
+                            <div class="p-grid-item">
+                                <h4><i class="fa-solid fa-gas-pump"></i> 2.2 Fuel, Mileage & Return</h4>
+                                <p>Rentals are dispatched with a 100% full tank and must be returned full, or fuel replacement surcharges applies at prevailing pump rates plus a 15% refueling fee. Unlimited mileage is standard unless specified for designated promo rates.</p>
+                            </div>
+                            <div class="p-grid-item border-none-bottom">
+                                <h4><i class="fa-regular fa-calendar-xmark"></i> 2.3 Cancellation & Grace Period</h4>
+                                <p>Cancellations made at least 24 hours prior to booking commencement receive a 100% refund. Cancellations under 24 hours are subject to a 1-day rental charge. A strict 30-minute grace period applies to scheduled vehicle returns prior to billing additional hourly intervals.</p>
+                            </div>
+                            <div class="p-grid-item border-none-bottom border-none-right">
+                                <h4><i class="fa-solid fa-receipt"></i> 2.4 Deposit & Toll Settlements</h4>
+                                <p>Security deposits are pre-authorized upon vehicle release and returned within 3-5 business days upon vehicle inspection verifying zero damage and settling electronic tollways (RFID / Autosweep / Easytrip) deducted at exact usage receipts.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article id="article-3" class="policy-article">
+                        <div class="article-header">
+                            <span class="badge badge-light-blue">FLEET OPERATIONS & MAINTENANCE</span>
+                            <span class="article-num">ARTICLE III</span>
+                        </div>
+                        <h2>3. Internal Fleet & Operational Policies</h2>
+                        
+                        <div class="policy-items-list">
+                            <div class="p-item">
+                                <div class="p-item-header">
+                                    <h4>3.1 40-Point Pre-Trip Mechanical Audit</h4>
+                                    <span class="status-badge-small"><i class="fa-solid fa-check"></i> Mandatory Check</span>
+                                </div>
+                                <p>Prior to customer handover, certified fleet technicians must sign off on computerized brake fluid, tire pressure, in-cabin tread depth, fluid levels, and diagnostic error codes. Inspection logs are digitized and paired directly to the customer's reservation ticket for transparency.</p>
+                            </div>
+                            <div class="p-item">
+                                <h4>3.2 Vehicle Retirement & Age Caps</h4>
+                                <p>Passenger cars and SUVs are strictly retired or transitioned out of primary rental service at 36 months of service or 80,000 km, whichever arrives first. This guarantees every customer drives a modern, fuel-efficient vehicle equipped with cutting-edge active collision safety features.</p>
+                            </div>
+                            <div class="p-item border-none">
+                                <h4>3.3 Maintenance Logging & Telemetry</h4>
+                                <p>Automatic telemetry logs oil lifespan, engine temperatures, and emergency impact detection continuously to our central operations center in BGC. Any critical vehicle alert triggers immediate remote dispatch assessment and dispatch of roadside service units.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 4 -->
+                    <article id="article-4" class="policy-article">
+                        <div class="article-header">
+                            <span class="badge badge-light-blue">ROADWAY SAFETY & EMERGENCY PROTOCOLS</span>
+                            <span class="article-num">ARTICLE IV</span>
+                        </div>
+                        <h2>4. Safety & Regulatory Compliance Policies</h2>
+                        
+                        <div class="policy-items-list">
+                            <div class="p-item">
+                                <h4>4.1 Speed Monitoring & Geofencing</h4>
+                                <p>For passenger and asset safety, speeds exceeding 120 km/h on expressways or travel outside approved island boundaries trigger real-time dispatch safety advisory alerts. Renter is notified via SMS/Mobile App to regulate velocity within lawful Philippine speed restrictions.</p>
+                            </div>
+                            <div class="p-item">
+                                <h4>4.2 Comprehensive Insurance & CDW Guidelines</h4>
+                                <p>Mandatory basic collision damage coverage applies to all trips. Willful negligence, off-roading with non-4x4 vehicles, unauthorized sub-leasing, or driving under intoxication immediately voids insurance coverage, placing full mechanical liability upon the renter.</p>
+                            </div>
+                            <div class="p-item border-none">
+                                <h4>4.3 Severe Weather & Typhoons Protocol</h4>
+                                <p>DriveSphere reserves the right to recall or reschedule vehicle departures during PAGASA Signal No. 3 or higher typhoons to guarantee customer safety. In such force majeure instances, booking dates are re-schedulable without penalties, or credited with a 100% voucher balance.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Verification Footer -->
+                    <div class="policy-verification">
+                        <div class="pv-left">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div>
+                                <strong>Official Philippine Compliance Registry</strong>
+                                <span>SEC Reg No. CS202000421 | LTFRB Tourist Transport Franchise VTR-2024-0341</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline-dark btn-sm">Verify License</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="policies-cta">
+            <div class="container">
+                <div class="pcta-box">
+                    <div class="pcta-content">
+                        <span class="badge-text-blue"><i class="fa-solid fa-scale-balanced"></i> LEGAL SUPPORT DESK</span>
+                        <h2>Questions regarding DriveSphere policies or customized corporate terms?</h2>
+                        <p>Our corporate governance team and compliance legal officers are available for institutional SLA arrangements, bespoke fleet tenders, and contractual clarifications.</p>
+                        <div class="pcta-contact">
+                            <span><i class="fa-regular fa-envelope"></i> legal@drivesphere.ph</span>
+                            <span><i class="fa-solid fa-phone"></i> Hotline: (02) 8888-0000</span>
+                        </div>
+                    </div>
+                    <div class="pcta-action">
+                        <button class="btn btn-primary btn-large"><i class="fa-solid fa-envelope-open-text"></i> Inquire with Compliance Officer</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section (With Updated Privacy Policy Link) -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col brand-col">
+                    <div class="footer-logo">
+                        <i class="fa-solid fa-car-side"></i> <span>DriveSphere</span>
+                    </div>
+                    <p>Your Premier Philippine Vehicle Rental & Smart Fleet Management Platform</p>
+                    <div class="social-links">
+                        <div class="social-icon-placeholder"><i class="fa-brands fa-facebook-f"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-solid fa-share-nodes"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-regular fa-envelope"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-regular fa-star"></i></div>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>ABOUT US</h4>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="fleet.html">Fleet Network</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>LEGAL & COMPLIANCE</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <!-- HERE IS THE UPDATED LINK -->
+                        <li><a href="policies.html">Privacy Policy</a></li>
+                        <li><a href="#">Rental Agreement</a></li>
+                        <li><a href="#">Insurance Coverage</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>GET HELP</h4>
+                    <ul>
+                        <li><a href="help.html">FAQs</a></li>
+                        <li><a href="#">24/7 Roadside Assistance</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
+                        <li><a href="#">Branch Locations</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-middle">
+                <div class="contact-info">
+                    <span><i class="fa-solid fa-phone"></i> 24/7 Hotline: <strong>(02) 8888-DRIVE</strong></span>
+                    <span><i class="fa-regular fa-envelope"></i> support@drivesphere.ph</span>
+                    <span><i class="fa-solid fa-location-dot"></i> BGC, Taguig City, Philippines</span>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">© 2026 DriveSphere Philippines Inc. All rights reserved.</div>
+                <div class="footer-bottom-links">
+                    <span>Enterprise Fleet Reliability</span> • <span>Island-Wide Mobility</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

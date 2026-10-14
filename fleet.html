@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveSphere - Fleet Standards & Categories</title>
+    <link rel="stylesheet" href="css/global.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/DriveSphere_logo.jpg" alt="DriveSphere Logo"> <span>DriveSphere</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="rental.html">Rental</a>
+                <a href="fleet.html" class="active">Fleet</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-primary">Book a Vehicle</button>
+                <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+                
+                <!-- Interactive Account Dropdown Wrapper -->
+                <div class="account-wrapper">
+                    <!-- Added inline onclick to guarantee the menu opens -->
+                    <button class="account-trigger" id="accountTrigger" onclick="document.getElementById('accountDropdown').classList.toggle('show'); this.classList.toggle('active'); event.stopPropagation();">
+                        <img src="" alt="User Avatar" class="avatar-img">
+                        <div class="acc-trigger-text">
+                            <strong>Account</strong>
+                            <span>Active Session</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down chevron-icon"></i>
+                    </button>
+
+                    <!-- The Dropdown Modal -->
+                    <div class="account-dropdown" id="accountDropdown">
+                        <div class="dropdown-header">
+                            <div>
+                                <div class="dh-title">
+                                    <h3>Account Selection</h3>
+                                    <div class="dh-title">
+                                </div>          
+                                </div>
+                                <p>Sign in to manage reservations, corporate fleet billing, or driver telematics across the Philippines.</p>
+                            </div>
+                            <!-- Added inline onclick to close the menu -->
+                            <button class="close-dropdown" onclick="document.getElementById('accountDropdown').classList.remove('show'); document.getElementById('accountTrigger').classList.remove('active');"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        
+                        <div class="dropdown-body">
+                            <!-- Fleet Account Card -->
+                            <div class="login-card">
+                                <div class="lc-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                                <div class="lc-content">
+                                    <div class="lc-top">
+                                        <h4>Fleet Account</h4>
+                                        <span class="lc-badge dark">Admin Portal</span>
+                                    </div>
+                                    <span class="lc-link-text"><i class="fa-solid fa-arrow-right-to-bracket"></i> Leads to Admin Login</span>
+                                    <p>For Fleet Managers, System Administrators, & Operations Dispatchers monitoring telemetry and corporate rentals.</p>
+                                    <a href="admin-login.html" class="lc-action">Sign in as Admin <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+
+                            <!-- User Account Card -->
+                            <div class="login-card">
+                                <div class="lc-icon"><i class="fa-solid fa-car-side"></i></div>
+                                <div class="lc-content">
+                                    <div class="lc-top">
+                                        <h4>User Account</h4>
+                                        <span class="lc-badge light">Customer Portal</span>
+                                    </div>
+                                    <span class="lc-link-text"><i class="fa-solid fa-arrow-right-to-bracket"></i> Leads to Customer Login</span>
+                                    <p>For Individual Renters, Corporate Clients, & VIP Travelers managing personal bookings and fast pick-up passes.</p>
+                                    
+                                    <!-- UPDATED LINK HERE -->
+                                    <a href="login.html" class="lc-action">Sign in as Customer <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-footer">
+                            
+                            <!-- UPDATED LINK HERE -->
+                            <div class="df-left">New to DriveSphere? <a href="register.html">Register here</a></div>
+                            
+                            <div class="df-links">
+                                <a href="#">Forgot password?</a>
+                                <span class="dot">•</span>
+                                <a href="#">Corporate Access</a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Fleet Hero Section -->
+        <section class="fleet-hero">
+            <div class="container">
+                <div class="fleet-hero-content">
+                    <div class="badge badge-dark"><i class="fa-solid fa-shield-halved"></i> PHILIPPINE FLEET CERTIFICATION 24.27</div>
+                    <h1>Engineered for Safety, Maintained<br>for Perfection</h1>
+                    <p>Explore the DriveSphere fleet standards — from agile city crossovers to rugged 4x4 expedition SUVs and VIP executive transport across Luzon, Visayas, and Mindanao.</p>
+                    <div class="hero-tags">
+                        <span class="pill-dark"># Premium SUVs</span>
+                        <span class="pill-dark"># Business Sedans</span>
+                        <span class="pill-dark"># VIP Shuttles</span>
+                    </div>
+                </div>
+
+                <!-- Hero Stats Grid -->
+                <div class="hero-stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>150+</h3>
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <strong>Certified Vehicles</strong>
+                        <p>Multi-tier active roster</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>100%</h3>
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </div>
+                        <strong>40-Point Pre-Trip</strong>
+                        <p>Computerized multi-sensor audit</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>< 2 Yrs</h3>
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <strong>Avg Fleet Age</strong>
+                        <p>Current generational models</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>24/7</h3>
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <strong>Roadside Support</strong>
+                        <p>Nationwide dispatch coverage</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Telemetry & Reliability Section -->
+        <section class="telemetry-section">
+            <div class="container telemetry-grid">
+                <div class="telemetry-text">
+                    <div class="badge-text-blue">DYNAMIC TELEMETRY PROTOCOL</div>
+                    <h2>Precision Telemetry Meets White-Glove Reliability</h2>
+                    <p>At DriveSphere, every rental unit undergoes an uncompromising life-cycle regimen. We don't just hand over keys — we commission high-performance machinery primed for the unique topographies of Philippine motorways, mountain passes, and dense urban corridors.</p>
+                    <p>From computerized OEM-margins mapping prior to key dispatch, to hospital-grade interior sanitization, our commitment protects executives, families, and cargo without compromise.</p>
+                </div>
+                
+                <div class="telemetry-features">
+                    <div class="t-feature-card">
+                        <div class="t-icon"><i class="fa-solid fa-laptop-medical"></i></div>
+                        <h4>Computerized Diagnostics</h4>
+                        <p>Every engine, brake system, and battery undergoes automated real-time telemetry scans before client handover.</p>
+                        <span class="t-link"><i class="fa-solid fa-shield-halved"></i> OBD-II Verified Drive</span>
+                    </div>
+                    <div class="t-feature-card">
+                        <div class="t-icon"><i class="fa-solid fa-file-contract"></i></div>
+                        <h4>Comprehensive Coverage</h4>
+                        <p>Complete collision damage waiver (CDW), third-party liability (CTPL), and personal accident indemnity embedded automatically.</p>
+                        <span class="t-link"><i class="fa-solid fa-shield-halved"></i> 100% Insured Fleet Surface</span>
+                    </div>
+                    <div class="t-feature-card">
+                        <div class="t-icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+                        <h4>Guaranteed Purity Seal</h4>
+                        <p>Multi-point virucidal mist cabin sanitization and UV filtration detailing guarantees immaculate cabin conditions.</p>
+                        <span class="t-link"><i class="fa-solid fa-shield-halved"></i> Hospital-Grade Sanitization</span>
+                    </div>
+                    <div class="t-feature-card">
+                        <div class="t-icon"><i class="fa-solid fa-gear"></i></div>
+                        <h4>Road-Ready Hardware</h4>
+                        <p>Fresh tread depth (>4mm mandated), optimized tire pressures, and high-spec LTO plates secured for cross-island Philippine driving.</p>
+                        <span class="t-link"><i class="fa-solid fa-shield-halved"></i> LTO Registration Certified</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dedicated Fleet Categories (Timeline Layout) -->
+        <section class="fleet-categories-section">
+            <div class="container">
+                <div class="category-header">
+                    <div class="badge-text-blue">3 MAIN TIERED VEHICLE CLASSES</div>
+                    <h2>Our Dedicated Fleet Categories</h2>
+                    <p>Precision-calibrated machines configured for corporate delegations, island touring, and high-density metropolis commutes.</p>
+                </div>
+
+                <div class="timeline-container">
+                    <!-- Vertical Line -->
+                    <div class="timeline-line"></div>
+
+                    <!-- Category 01 -->
+                    <div class="timeline-row">
+                        <div class="timeline-col img-col">
+                            <div class="cat-image-placeholder">
+                                <div class="img-tags-top">
+                                    <span class="tag tag-black">CAPACITY: UP TO 7-SEATER</span>
+                                    <span class="tag tag-green"><i class="fa-solid fa-mountain"></i> All-Weather & Off-Road</span>
+                                </div>
+                                <div class="spec-bar-bottom">
+                                    <div class="spec-box"><span>Capacity</span><strong>7 Seats</strong></div>
+                                    <div class="spec-box"><span>Drive</span><strong>4WD / 4x4</strong></div>
+                                    <div class="spec-box"><span>Engine</span><strong>2.8L Turbo</strong></div>
+                                    <div class="spec-box"><span>Ground Clr.</span><strong>225 mm</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-node">01</div>
+                        <div class="timeline-col text-col text-right-col">
+                            <div class="badge-text-blue"><i class="fa-solid fa-car"></i> Category Node 01 — Heavy Duty Luxury</div>
+                            <h3>Executive & Premium SUVs</h3>
+                            <p>Engineered for both VIP transit and rugged island journeys. Featuring high ground clearance, advanced all-wheel drivetrain systems, and reinforced chassis dynamics, our SUV class masters provincial mountain grades and flooded urban downpours alike.</p>
+                            
+                            <div class="bullet-grid">
+                                <div><i class="fa-solid fa-check-circle"></i> <strong>Elevated / Robust Ride</strong><br><span>Heavy duty suspension & tinted ballistic window films.</span></div>
+                                <div><i class="fa-solid fa-check-circle"></i> <strong>Rough-Terrain Mastery</strong><br><span>Hill descent control and terrain selector electronics.</span></div>
+                            </div>
+
+                            <div class="active-models-box">
+                                <div class="model-info">
+                                    <span>ACTIVE EXAMPLES:</span>
+                                    <strong>Toyota Fortuner LTD 4x4 • Ford Everest Titanium+ • Mitsubishi Montero Sport</strong>
+                                </div>
+                                <div class="model-price">
+                                    <span>Starting From</span>
+                                    <strong>₱3,900<span>/ day</span></strong>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary">View Available SUVs in Rental <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Category 02 -->
+                    <div class="timeline-row reverse-row">
+                        <div class="timeline-col text-col text-left-col">
+                            <div class="badge-text-blue"><i class="fa-solid fa-car"></i> Category Node 02 — Urban Efficiency & Elegance</div>
+                            <h3>Modern City & Business Sedans</h3>
+                            <p>Crafted for seamless navigation through Bonifacio Global City, Makati Central Business District, and regional expressways. These sedans deliver refined aerodynamic ride comfort, whisper-quiet cabin acoustics, and class-leading fuel consumption.</p>
+                            
+                            <div class="efficiency-bar">
+                                <div class="eff-labels">
+                                    <span>Efficiency Index</span>
+                                    <span>Up to 18.4 km/L</span>
+                                </div>
+                                <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
+                                <div class="eff-labels bottom">
+                                    <span>Stop + Start Metro Traffic Optimized</span>
+                                    <span>Euro 4 Certified</span>
+                                </div>
+                            </div>
+
+                            <div class="active-models-box">
+                                <div class="model-info">
+                                    <span>ACTIVE EXAMPLES:</span>
+                                    <strong>Honda Civic RS Turbo • Mazda 3 Fastback • Toyota Vios • Nissan Almera</strong>
+                                </div>
+                                <div class="model-price">
+                                    <span>Starting From</span>
+                                    <strong>₱2,400<span>/ day</span></strong>
+                                </div>
+                            </div>
+                            <button class="btn btn-dark">View Sedans in Rental <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <div class="timeline-node">02</div>
+                        <div class="timeline-col img-col">
+                            <div class="cat-image-placeholder">
+                                <div class="img-tags-top">
+                                    <span class="tag tag-black">BUSINESS PARK / NAI TERMINAL</span>
+                                    <span class="tag tag-blue"><i class="fa-brands fa-apple"></i> Apple CarPlay & Auto Equipped</span>
+                                </div>
+                                <div class="spec-bar-bottom">
+                                    <div class="spec-box"><span>Fuel Econ</span><strong>18 km/L</strong></div>
+                                    <div class="spec-box"><span>Transmission</span><strong>CVT Auto</strong></div>
+                                    <div class="spec-box"><span>Luggage</span><strong>2 Large</strong></div>
+                                    <div class="spec-box"><span>Audio</span><strong>Bose 12-Spk</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 03 -->
+                    <div class="timeline-row">
+                        <div class="timeline-col img-col">
+                            <div class="cat-image-placeholder">
+                                <div class="img-tags-top">
+                                    <span class="tag tag-black">CAPACITY: 10 TO 14 SEATERS</span>
+                                    <span class="tag tag-blue"><i class="fa-solid fa-wifi"></i> VIP AT-SEAT AMENITIES</span>
+                                </div>
+                                <div class="spec-bar-bottom">
+                                    <div class="spec-box"><span>Capacity</span><strong>10-14 Pax</strong></div>
+                                    <div class="spec-box"><span>Interior</span><strong>Captains</strong></div>
+                                    <div class="spec-box"><span>AC Zones</span><strong>Individual</strong></div>
+                                    <div class="spec-box"><span>Luggage</span><strong>5+ Cases</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-node">03</div>
+                        <div class="timeline-col text-col text-right-col">
+                            <div class="badge-text-blue"><i class="fa-solid fa-car"></i> Category Node 03 — Corporate Delegation & Group VIP</div>
+                            <h3>Commercial & Group VIP Shuttles</h3>
+                            <p>The benchmark for corporate airport transfers, summit transport, and cross-island extended tours. Furnished with first-class captain seats, dual-climate rear compressors, 220V/C ports on all rows, and ample storage for golf gear and international luggage.</p>
+                            
+                            <div class="bullet-grid vertical-bullets">
+                                <div><i class="fa-solid fa-check-circle"></i> <strong>NAIA & Clark Airport Meet & Greet Ready</strong><br><span>Dedicated curbside pickup clearance and chauffeur coordination.</span></div>
+                                <div><i class="fa-solid fa-check-circle"></i> <strong>Radical Effortless Express Access</strong><br><span>Motorized slidding with individual power outlets and reading lamps.</span></div>
+                            </div>
+
+                            <div class="active-models-box">
+                                <div class="model-info">
+                                    <span>ACTIVE EXAMPLES:</span>
+                                    <strong>Toyota HiAce Super Grandia Elite • Commuter Deluxe • Hyundai Staria VIP</strong>
+                                </div>
+                                <div class="model-price">
+                                    <span>Starting From</span>
+                                    <strong>₱5,800<span>/ day</span></strong>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary">View Vans in Rental <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instant Category Comparison -->
+        <section class="comparison-section">
+            <div class="container">
+                <div class="comparison-header">
+                    <div>
+                        <span class="badge-text-gray">FLEET QUICK LOOKUP</span>
+                        <h2>Instant Category Comparison</h2>
+                    </div>
+                    <div class="status-badge"><i class="fa-solid fa-check-circle"></i> All units on active lease array within 24 hours</div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="fleet-table">
+                        <thead>
+                            <tr>
+                                <th>CLASS / SEGMENT</th>
+                                <th>PRIMARY CAPABILITY</th>
+                                <th>PASSENGER / LUGGAGE</th>
+                                <th>STANDARD TECH</th>
+                                <th>DAILY BASE RATE</th>
+                                <th>INSTANT ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Executive SUV</strong><br><span>Fortuner / Everest</span></td>
+                                <td>Mountain / Rough Highway</td>
+                                <td>7 Seats + 4 Suitcases</td>
+                                <td>ADAS + 360° Cam + 4WD</td>
+                                <td><strong>₱3,900</strong></td>
+                                <td><button class="btn btn-outline-blue btn-sm">Book Quick</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>City Business Sedan</strong><br><span>Civic / Mazda 3</span></td>
+                                <td>High-Efficiency Commute</td>
+                                <td>5 Seats + 2 Suitcases</td>
+                                <td>TSS/HS + 7" Info Screen</td>
+                                <td><strong>₱2,400</strong></td>
+                                <td><button class="btn btn-outline-blue btn-sm">Book Quick</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Group VIP Shuttle</strong><br><span>HiAce Super Grandia</span></td>
+                                <td>Delegation / Airport Exchange</td>
+                                <td>10-14 Seats + 5 Bags</td>
+                                <td>Ottoman Chairs + Dual AC</td>
+                                <td><strong>₱5,800</strong></td>
+                                <td><button class="btn btn-outline-blue btn-sm">Book Quick</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="cta-banner">
+            <div class="container">
+                <div class="cta-container">
+                    <div class="cta-text">
+                        <span class="badge-text-gray"><i class="fa-solid fa-bolt"></i> INSTANT ONLINE FLEET ALLOCATION</span>
+                        <h2>Ready to Drive? Browse Live Fleet Inventory.</h2>
+                        <p>View real-time calendar availability, select pick-up/terminal locations, and lock in guaranteed rates with instant automated reservation confirmation.</p>
+                    </div>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary btn-large">Go to Rental Listings <i class="fa-solid fa-arrow-right"></i></button>
+                        <button class="btn btn-outline-white btn-large"><i class="fa-solid fa-building"></i> Corporate Inquiry</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col brand-col">
+                    <div class="footer-logo">
+                        <i class="fa-solid fa-car-side"></i> <span>DriveSphere</span>
+                    </div>
+                    <p>Your Premier Philippine Vehicle Rental & Smart Fleet Management Platform</p>
+                    <div class="social-links">
+                        <div class="social-icon-placeholder"><i class="fa-brands fa-facebook-f"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-solid fa-share-nodes"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-regular fa-envelope"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-regular fa-star"></i></div>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>ABOUT US</h4>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Fleet Network</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>LEGAL & COMPLIANCE</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="policies.html">Privacy Policy</a></li>
+                        <li><a href="#">Rental Agreement</a></li>
+                        <li><a href="#">Insurance Coverage</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>GET HELP</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">24/7 Roadside Assistance</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
+                        <li><a href="#">Branch Locations</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-middle">
+                <div class="contact-info">
+                    <span><i class="fa-solid fa-phone"></i> 24/7 Hotline: <strong>(02) 8888-DRIVE</strong></span>
+                    <span><i class="fa-regular fa-envelope"></i> support@drivesphere.ph</span>
+                    <span><i class="fa-solid fa-location-dot"></i> BGC, Taguig City, Philippines</span>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">© 2026 DriveSphere Philippines Inc. All rights reserved.</div>
+                <div class="footer-bottom-links">
+                    <span>Enterprise Fleet Reliability</span> • <span>Island-Wide Mobility</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

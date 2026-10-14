@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveSphere - Customer Reviews & Fleet Ratings</title>
+    <link rel="stylesheet" href="css/global.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/DriveSphere_logo.jpg" alt="DriveSphere Logo"> <span>DriveSphere</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="rental.html">Rental</a>
+                <a href="fleet.html">Fleet</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-primary">Book a Vehicle</button>
+                <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+                
+            <!-- Interactive Account Dropdown Wrapper -->
+                <div class="account-wrapper">
+                    <!-- Added inline onclick to guarantee the menu opens -->
+                    <button class="account-trigger" id="accountTrigger" onclick="document.getElementById('accountDropdown').classList.toggle('show'); this.classList.toggle('active'); event.stopPropagation();">
+                        <img src="" alt="User Avatar" class="avatar-img">
+                        <div class="acc-trigger-text">
+                            <strong>Account</strong>
+                            <span>Active Session</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down chevron-icon"></i>
+                    </button>
+
+                    <!-- The Dropdown Modal -->
+                    <div class="account-dropdown" id="accountDropdown">
+                        <div class="dropdown-header">
+                            <div>
+                                <div class="dh-title">
+                                    <h3>Account Selection</h3>
+                                    <div class="dh-title">
+                                </div>
+                                </div>
+                                <p>Sign in to manage reservations, corporate fleet billing, or driver telematics across the Philippines.</p>
+                            </div>
+                            <!-- Added inline onclick to close the menu -->
+                            <button class="close-dropdown" onclick="document.getElementById('accountDropdown').classList.remove('show'); document.getElementById('accountTrigger').classList.remove('active');"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        
+                        <div class="dropdown-body">
+                            <!-- Fleet Account Card -->
+                            <div class="login-card">
+                                <div class="lc-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                                <div class="lc-content">
+                                    <div class="lc-top">
+                                        <h4>Fleet Account</h4>
+                                        <span class="lc-badge dark">Admin Portal</span>
+                                    </div>
+                                    <span class="lc-link-text"><i class="fa-solid fa-arrow-right-to-bracket"></i> Leads to Admin Login</span>
+                                    <p>For Fleet Managers, System Administrators, & Operations Dispatchers monitoring telemetry and corporate rentals.</p>
+                                    <a href="admin-login.html" class="lc-action">Sign in as Admin <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+
+                            <!-- User Account Card -->
+                            <div class="login-card">
+                                <div class="lc-icon"><i class="fa-solid fa-car-side"></i></div>
+                                <div class="lc-content">
+                                    <div class="lc-top">
+                                        <h4>User Account</h4>
+                                        <span class="lc-badge light">Customer Portal</span>
+                                    </div>
+                                    <span class="lc-link-text"><i class="fa-solid fa-arrow-right-to-bracket"></i> Leads to Customer Login</span>
+                                    <p>For Individual Renters, Corporate Clients, & VIP Travelers managing personal bookings and fast pick-up passes.</p>
+                                    
+                                    <!-- UPDATED LINK HERE -->
+                                    <a href="login.html" class="lc-action">Sign in as Customer <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-footer">
+                            
+                            <!-- UPDATED LINK HERE -->
+                            <div class="df-left">New to DriveSphere? <a href="register.html">Register here</a></div>
+                            
+                            <div class="df-links">
+                                <a href="#">Forgot password?</a>
+                                <span class="dot">•</span>
+                                <a href="#">Corporate Access</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="reviews-main-bg">
+        <!-- Sub Navigation -->
+        <div class="contact-subnav">
+            <div class="container subnav-container">
+                <div class="subnav-left">
+                    <a href="help.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Help</a>
+                    <span class="breadcrumb-divider">|</span>
+                    <div class="breadcrumbs">
+                        <span>Home</span> / <span>Help</span> / <strong>Customer Reviews</strong>
+                    </div>
+                </div>
+                <div class="subnav-right">
+                    <span class="status-indicator"><span class="pulse-dot"></span> Live Verified Ledger • ISO 9001:2015 Audited</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews Hero -->
+        <section class="reviews-hero">
+            <div class="container rh-container">
+                <div class="rh-content">
+                    <div class="badge badge-light-blue"><i class="fa-regular fa-circle-check"></i> VERIFIED RENTER EXPERIENCES</div>
+                    <h1 class="reviews-title">Customer Reviews & Fleet Ratings</h1>
+                    <p class="reviews-subtitle">Real feedback from corporate executives, business travelers, family vacationers, and VIP delegations who rely on DriveSphere across Metro Manila, Clark, and Cebu.</p>
+                </div>
+                <div class="rh-stats">
+                    <span class="rh-label">NATIONAL TRUST INDEX</span>
+                    <strong class="rh-score">99.8% <span>Service SLA Met</span></strong>
+                    <span class="rh-locations">NCR • Central Luzon • Central Visayas</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aggregate Rating Box & Filters -->
+        <section class="reviews-aggregate-section">
+            <div class="container">
+                
+                <!-- Aggregate Dashboard -->
+                <div class="aggregate-dashboard">
+                    <div class="agg-left">
+                        <div class="big-rating">4.92<span>/5.0</span></div>
+                        <div class="agg-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="agg-based">Based on <strong>1,480+</strong> verified completed rentals</p>
+                        <span class="agg-secured"><i class="fa-solid fa-shield-halved"></i> All reviews validated via digital rental contracts</span>
+                    </div>
+
+                    <div class="agg-middle">
+                        <div class="rating-bar-row">
+                            <span>5 Stars</span>
+                            <div class="r-track"><div class="r-fill" style="width: 84%"></div></div>
+                            <span>84%</span>
+                        </div>
+                        <div class="rating-bar-row">
+                            <span>4 Stars</span>
+                            <div class="r-track"><div class="r-fill" style="width: 15%"></div></div>
+                            <span>15%</span>
+                        </div>
+                        <div class="rating-bar-row">
+                            <span>3 Stars</span>
+                            <div class="r-track"><div class="r-fill" style="width: 1%"></div></div>
+                            <span>1%</span>
+                        </div>
+                        <div class="rating-bar-row">
+                            <span>2 Stars</span>
+                            <div class="r-track"><div class="r-fill" style="width: 0%"></div></div>
+                            <span><0.5%</span>
+                        </div>
+                        <div class="rating-bar-row">
+                            <span>1 Star</span>
+                            <div class="r-track"><div class="r-fill" style="width: 0%"></div></div>
+                            <span>0%</span>
+                        </div>
+                    </div>
+
+                    <div class="agg-right">
+                        <div class="agg-metric">
+                            <i class="fa-regular fa-clock"></i>
+                            <div><strong>99.4%</strong><span>On-Time Handover</span></div>
+                        </div>
+                        <div class="agg-metric">
+                            <i class="fa-solid fa-spray-can-sparkles"></i>
+                            <div><strong>100%</strong><span>Sanitized & Inspected</span></div>
+                        </div>
+                        <div class="agg-metric">
+                            <i class="fa-solid fa-arrow-rotate-right"></i>
+                            <div><strong>98.7%</strong><span>Would Rent Again</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search & Filters -->
+                <div class="reviews-controls">
+                    <div class="search-sort-bar">
+                        <div class="r-search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Search feedback by vehicle model, airport terminal, or destination...">
+                        </div>
+                        <div class="r-actions">
+                            <div class="r-sort">
+                                <span>Sort: Highest Rated</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <button class="btn btn-dark"><i class="fa-solid fa-sliders"></i> Filter</button>
+                        </div>
+                    </div>
+
+                    <div class="review-pills">
+                        <button class="rpill active">All Reviews (1,480)</button>
+                        <button class="rpill">Executive SUVs (412)</button>
+                        <button class="rpill">Business Sedans (280)</button>
+                        <button class="rpill">VIP Passenger Vans (200)</button>
+                        <button class="rpill">Chauffeur Services (244)</button>
+                        <button class="rpill">Airport Handover (144)</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Grid -->
+        <section class="reviews-grid-section">
+            <div class="container">
+                <div class="reviews-grid">
+                    
+                    <!-- Review Card 1 -->
+                    <div class="review-card">
+                        <div class="rc-header">
+                            <div class="rc-user">
+                                <div class="avatar avatar-dark">RM</div>
+                                <div>
+                                    <h4>Atty. Rafael Mendoza</h4>
+                                    <span>Managing Partner, Makati Law Firm</span>
+                                </div>
+                            </div>
+                            <span class="rc-tag corporate-tag">♦ Corporate</span>
+                        </div>
+                        <div class="rc-rating-date">
+                            <div class="rc-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <strong>5.0</strong></div>
+                            <span>May 10, 2026</span>
+                        </div>
+                        <div class="rc-image placeholder-bg">
+                            <div class="rc-img-label left">Toyota HiAce Super Grandia Elite</div>
+                            <div class="rc-img-label right bg-dark">Chauffeur</div>
+                        </div>
+                        <p class="rc-text">"DriveSphere provided our visiting ASEAN delegates with flawless chauffeur transit from NAIA Terminal 3 to BGC and Makati. The van was immaculate, captain seats were exceptionally comfortable, and the driver was punctual and highly professional. Seamless invoicing with official BIR receipt."</p>
+                        <div class="rc-footer">
+                            <span class="rc-loc"><i class="fa-solid fa-plane-arrival"></i> NAIA Terminal 3 Handover</span>
+                            <span class="rc-perk text-blue">Verified Corporate Contract</span>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 2 -->
+                    <div class="review-card">
+                        <div class="rc-header">
+                            <div class="rc-user">
+                                <div class="avatar avatar-light">MC</div>
+                                <div>
+                                    <h4>Maria Cristina Santos</h4>
+                                    <span>Tech Founder, BGC</span>
+                                </div>
+                            </div>
+                            <span class="rc-tag self-tag">♦ Self-Drive</span>
+                        </div>
+                        <div class="rc-rating-date">
+                            <div class="rc-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <strong>5.0</strong></div>
+                            <span>May 6, 2026</span>
+                        </div>
+                        <div class="rc-image placeholder-bg">
+                            <div class="rc-img-label left">Toyota Fortuner LTD 2.8 4x4</div>
+                            <div class="rc-img-label right bg-dark">Digital Key</div>
+                        </div>
+                        <p class="rc-text">"Rented the Fortuner for a 4-day corporate expedition to Clark and Subic. The contactless handover took under 3 minutes via the digital agreement. Car drove like it just rolled out of the showroom. Full tank, pristine cleanliness, and zero hidden fees."</p>
+                        <div class="rc-footer">
+                            <span class="rc-loc"><i class="fa-solid fa-map-location-dot"></i> Clark Freeport Corridor</span>
+                            <span class="rc-perk text-green">Zero Surcharge Confirmed</span>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 3 -->
+                    <div class="review-card">
+                        <div class="rc-header">
+                            <div class="rc-user">
+                                <div class="avatar avatar-light">KT</div>
+                                <div>
+                                    <h4>Engr. Kenneth Tan</h4>
+                                    <span>Operations Director, Pasig City</span>
+                                </div>
+                            </div>
+                            <span class="rc-tag verified-tag">♦ Verified Renter</span>
+                        </div>
+                        <div class="rc-rating-date">
+                            <div class="rc-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <strong>5.0</strong></div>
+                            <span>April 28, 2026</span>
+                        </div>
+                        <div class="rc-image placeholder-bg">
+                            <div class="rc-img-label left">Honda Civic RS Turbo</div>
+                            <div class="rc-img-label right bg-dark">Executive Sedan</div>
+                        </div>
+                        <p class="rc-text">"Needed an executive sedan for client meetings across Ortigas and Bonifacio Global City. The Honda Sensing tech gave great peace of mind in heavy traffic, and Apple CarPlay worked instantly. Will definitely be my go-to for city business travel."</p>
+                        <div class="rc-footer">
+                            <span class="rc-loc"><i class="fa-solid fa-city"></i> BGC - Ortigas Metro Run</span>
+                            <span class="rc-perk text-blue">Immediate Dispatch</span>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 4 -->
+                    <div class="review-card">
+                        <div class="rc-header">
+                            <div class="rc-user">
+                                <div class="avatar avatar-light">BA</div>
+                                <div>
+                                    <h4>Dr. Beatrice Alcantara</h4>
+                                    <span>Medical Consultant, Cebu City</span>
+                                </div>
+                            </div>
+                            <span class="rc-tag verified-tag">♦ Verified Renter</span>
+                        </div>
+                        <div class="rc-rating-date">
+                            <div class="rc-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i> <strong>4.9</strong></div>
+                            <span>April 22, 2026</span>
+                        </div>
+                        <div class="rc-image placeholder-bg">
+                            <div class="rc-img-label left">Ford Everest Titanium 4x4</div>
+                            <div class="rc-img-label right bg-dark">Airport Drop</div>
+                        </div>
+                        <p class="rc-text">"Cebu Mactan airport drop-off was right on time at the curb. The panoramic roof and power-fold third row made our family trip to Moalboal comfortable and hassle-free. Customer support checked in via SMS to make sure everything went smoothly."</p>
+                        <div class="rc-footer">
+                            <span class="rc-loc"><i class="fa-solid fa-plane-departure"></i> Mactan-Cebu Intl Terminal 2</span>
+                            <span class="rc-perk text-blue">Proactive Concierge</span>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 5 -->
+                    <div class="review-card">
+                        <div class="rc-header">
+                            <div class="rc-user">
+                                <div class="avatar avatar-dark">MV</div>
+                                <div>
+                                    <h4>Mark Villareal</h4>
+                                    <span>Events Producer, Quezon City</span>
+                                </div>
+                            </div>
+                            <span class="rc-tag corporate-tag">♦ Corporate</span>
+                        </div>
+                        <div class="rc-rating-date">
+                            <div class="rc-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <strong>5.0</strong></div>
+                            <span>April 15, 2026</span>
+                        </div>
+                        <div class="rc-image placeholder-bg">
+                            <div class="rc-img-label left">Toyota HiAce Commuter Deluxe</div>
+                            <div class="rc-img-label right bg-dark">Multi-Unit</div>
+                        </div>
+                        <p class="rc-text">"Booked two vans for our production crew heading to Batangas. Both vehicles arrived sanitized, air conditioning was ice-cold, and tire pressure was pre-verified. The transparent security deposit refund within 3 days is unlike any other local car rental."</p>
+                        <div class="rc-footer">
+                            <span class="rc-loc"><i class="fa-regular fa-credit-card"></i> Deposit Refund: 48 hrs</span>
+                            <span class="rc-perk text-blue">Pre-Trip Telemetry Pass</span>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 6 -->
+                    <div class="review-card">
+                        <div class="rc-header">
+                            <div class="rc-user">
+                                <div class="avatar avatar-light">SC</div>
+                                <div>
+                                    <h4>Samantha Cruz</h4>
+                                    <span>Creative Director, Taguig</span>
+                                </div>
+                            </div>
+                            <span class="rc-tag self-tag">♦ Self-Drive</span>
+                        </div>
+                        <div class="rc-rating-date">
+                            <div class="rc-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <strong>5.0</strong></div>
+                            <span>April 08, 2026</span>
+                        </div>
+                        <div class="rc-image placeholder-bg">
+                            <div class="rc-img-label left">Mazda 3 Fastback Premium</div>
+                            <div class="rc-img-label right bg-dark">Premium Hatch</div>
+                        </div>
+                        <p class="rc-text">"Stunning car with a Bose sound system and heads-up display. DriveSphere sets the gold standard for car rentals in the Philippines. Transparent billing, no unexpected surcharges at drop-off."</p>
+                        <div class="rc-footer">
+                            <span class="rc-loc"><i class="fa-solid fa-tag"></i> Guaranteed Rate Card</span>
+                            <span class="rc-perk text-green">100% BIR Transparency</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Pagination -->
+                <div class="reviews-pagination">
+                    <div class="rp-info">Showing <strong>1-6</strong> of <strong>1,480</strong> verified reviews</div>
+                    <div class="rp-controls">
+                        <button class="rp-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="rp-btn active">1</button>
+                        <button class="rp-btn">2</button>
+                        <button class="rp-btn">3</button>
+                        <span class="rp-dots">...</span>
+                        <button class="rp-btn">247</button>
+                        <button class="rp-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA Bar -->
+        <section class="reviews-cta-bar">
+            <div class="container">
+                <div class="rcta-box">
+                    <div class="rcta-text">
+                        <div class="rcta-badge"><i class="fa-solid fa-shield-halved"></i> 100% Comprehensive Collision & Liability Insurance Included</div>
+                        <h2>Ready to Experience DriveSphere?</h2>
+                        <p>Explore our premium fleet or reserve your vehicle in minutes. Enjoy transparent rates, guaranteed models, and white-glove handover across Luzon and Visayas.</p>
+                    </div>
+                    <div class="rcta-buttons">
+                        <button class="btn btn-primary-light btn-large" onclick="window.location.href='rental.html'">Browse Rental Fleet <i class="fa-solid fa-arrow-right"></i></button>
+                        <button class="btn btn-outline-white btn-large" onclick="window.location.href='help.html'"><i class="fa-regular fa-circle-left"></i> Back to Help</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col brand-col">
+                    <div class="footer-logo">
+                        <i class="fa-solid fa-car-side"></i> <span>DriveSphere</span>
+                    </div>
+                    <p>Your Premier Philippine Vehicle Rental & Smart Fleet Management Platform</p>
+                    <div class="social-links">
+                        <div class="social-icon-placeholder"><i class="fa-brands fa-facebook-f"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-solid fa-share-nodes"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-regular fa-envelope"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-regular fa-star"></i></div>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>ABOUT US</h4>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="fleet.html">Fleet Network</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>LEGAL & COMPLIANCE</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="policies.html">Privacy Policy</a></li>
+                        <li><a href="#">Rental Agreement</a></li>
+                        <li><a href="#">Insurance Coverage</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>GET HELP</h4>
+                    <ul>
+                        <li><a href="help.html">FAQs</a></li>
+                        <li><a href="#">24/7 Roadside Assistance</a></li>
+                        <li><a href="contact.html">Booking Support</a></li>
+                        <li><a href="#">Branch Locations</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-middle">
+                <div class="contact-info">
+                    <span><i class="fa-solid fa-phone"></i> 24/7 Hotline: <strong>(02) 8888-DRIVE</strong></span>
+                    <span><i class="fa-regular fa-envelope"></i> support@drivesphere.ph</span>
+                    <span><i class="fa-solid fa-location-dot"></i> BGC, Taguig City, Philippines</span>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">© 2026 DriveSphere Philippines Inc. All rights reserved.</div>
+                <div class="footer-bottom-links">
+                    <span>Enterprise Fleet Reliability</span> • <span>Island-Wide Mobility</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

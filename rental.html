@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveSphere - Rental Inventory</title>
+    <link rel="stylesheet" href="css/global.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/DriveSphere_logo.jpg" alt="DriveSphere Logo"> <span>DriveSphere</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="rental.html" class="active">Rental</a>
+                <a href="fleet.html">Fleet</a>
+                <a href="about.html">About</a>
+                <a href="help.html">Help</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-primary">Book a Vehicle</button>
+                <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+                
+                <!-- Interactive Account Dropdown Wrapper -->
+                <div class="account-wrapper">
+                    <!-- Added inline onclick to guarantee the menu opens -->
+                    <button class="account-trigger" id="accountTrigger" onclick="document.getElementById('accountDropdown').classList.toggle('show'); this.classList.toggle('active'); event.stopPropagation();">
+                        <img src="" alt="User Avatar" class="avatar-img">
+                        <div class="acc-trigger-text">
+                            <strong>Account</strong>
+                            <span>Active Session</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-down chevron-icon"></i>
+                    </button>
+
+                    <!-- The Dropdown Modal -->
+                    <div class="account-dropdown" id="accountDropdown">
+                        <div class="dropdown-header">
+                            <div>
+                                <div class="dh-title">
+                                    <h3>Account Selection</h3>
+                                    <div class="dh-title">
+                                </div>
+                                </div>
+                                <p>Sign in to manage reservations, corporate fleet billing, or driver telematics across the Philippines.</p>
+                            </div>
+                            <!-- Added inline onclick to close the menu -->
+                            <button class="close-dropdown" onclick="document.getElementById('accountDropdown').classList.remove('show'); document.getElementById('accountTrigger').classList.remove('active');"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        
+                        <div class="dropdown-body">
+                            <!-- Fleet Account Card -->
+                            <div class="login-card">
+                                <div class="lc-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                                <div class="lc-content">
+                                    <div class="lc-top">
+                                        <h4>Fleet Account</h4>
+                                        <span class="lc-badge dark">Admin Portal</span>
+                                    </div>
+                                    <span class="lc-link-text"><i class="fa-solid fa-arrow-right-to-bracket"></i> Leads to Admin Login</span>
+                                    <p>For Fleet Managers, System Administrators, & Operations Dispatchers monitoring telemetry and corporate rentals.</p>
+                                    <a href="admin-login.html" class="lc-action">Sign in as Admin <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+
+                            <!-- User Account Card -->
+                            <div class="login-card">
+                                <div class="lc-icon"><i class="fa-solid fa-car-side"></i></div>
+                                <div class="lc-content">
+                                    <div class="lc-top">
+                                        <h4>User Account</h4>
+                                        <span class="lc-badge light">Customer Portal</span>
+                                    </div>
+                                    <span class="lc-link-text"><i class="fa-solid fa-arrow-right-to-bracket"></i> Leads to Customer Login</span>
+                                    <p>For Individual Renters, Corporate Clients, & VIP Travelers managing personal bookings and fast pick-up passes.</p>
+                                    
+                                    <!-- UPDATED LINK HERE -->
+                                    <a href="login.html" class="lc-action">Sign in as Customer <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dropdown-footer">
+                            
+                            <!-- UPDATED LINK HERE -->
+                            <div class="df-left">New to DriveSphere? <a href="register.html">Register here</a></div>
+                            
+                            <div class="df-links">
+                                <a href="#">Forgot password?</a>
+                                <span class="dot">•</span>
+                                <a href="#">Corporate Access</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!-- Telemetry Bar -->
+    <div class="telemetry-bar">
+        <div class="container telemetry-container">
+            <div class="telemetry-left">
+                <span class="status-dot"></span>
+                <span class="telemetry-label">LIVE FLEET TELEMETRY</span>
+                <span class="telemetry-text">Metro Manila, Clark & Cebu hubs synchronized. Average turnaround: <strong>14 mins</strong></span>
+            </div>
+            <div class="telemetry-right">
+                <span><i class="fa-solid fa-shield-halved"></i> Full Comprehensive Insurance</span>
+                <span><i class="fa-solid fa-gauge-high"></i> Zero Mileage Caps</span>
+                <span><i class="fa-solid fa-headset"></i> 24/7 Roadside Assist</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Hero Section -->
+    <section class="search-hero">
+        <div class="container">
+            <div class="hero-text">
+                <div class="badge badge-dark"><i class="fa-solid fa-car"></i> EXECUTIVE & ISLAND-WIDE LOGISTICS</div>
+                <h1>Reserve Your Vehicle in Minutes</h1>
+                <p>Flexible daily, weekly, and corporate rental options across Metro Manila and key regional hubs. Verified road-ready, fully insured, and instantly dispatched.</p>
+            </div>
+
+            <div class="search-widget-horizontal">
+                <form id="rentalSearchForm">
+                    <!-- Top 5 Columns -->
+                    <div class="search-grid-top">
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-location-dot"></i> PICK-UP HUB</label>
+                            <select>
+                                <option>BGC Taguig Fleet Hub (Central)</option>
+                                <option>Makati HQ</option>
+                                <option>Cebu IT Park</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-arrow-right-arrow-left"></i> RETURN STATION</label>
+                            <select>
+                                <option>Return to Same Location</option>
+                                <option>Different Hub Drop-off</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-regular fa-calendar"></i> PICKUP DATE & TIME</label>
+                            <!-- Use datetime-local for the native calendar popup -->
+                            <input type="datetime-local" value="2025-05-15T10:00">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-regular fa-calendar"></i> RETURN DATE & TIME</label>
+                            <!-- Use datetime-local for the native calendar popup -->
+                            <input type="datetime-local" value="2025-05-18T18:00">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-car-side"></i> VEHICLE CATEGORY</label>
+                            <select>
+                                <option>All Vehicle Classes</option>
+                                <option>Executive Sedans</option>
+                                <option>Utility SUVs</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Controls -->
+                    <div class="search-grid-bottom">
+                        <div class="budget-slider-group">
+                            <label>Daily Budget Range: <span id="budgetLabel">Up to ₱8,500 / day</span></label>
+                            <input type="range" min="1500" max="15000" step="500" value="8500" class="slider">
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" checked> With Driver Option</label>
+                            <label><input type="checkbox"> Airport Fast Delivery</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large"><i class="fa-solid fa-magnifying-glass"></i> Search Available Cars</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section> <!-- 🚨 CRITICAL: THIS STOPS THE DARK BACKGROUND 🚨 -->
+
+    <!-- The light background section starts here -->
+    <div class="filter-bar">
+        <div class="container filter-container">
+            <div class="filter-pills">
+                <button class="pill active"><i class="fa-solid fa-car"></i> All Vehicles (28)</button>
+                    <button class="pill"><span class="status-dot"></span> Available Now (19)</button>
+                    <button class="pill">Premium SUVs (9)</button>
+                    <button class="pill">Executive Sedans (7)</button>
+                    <button class="pill">Passenger Vans (6)</button>
+                    <button class="pill"><i class="fa-solid fa-leaf"></i> Hybrid / EV (4)</button>
+                </div>
+                <div class="filter-actions">
+                    <div class="sort-by">
+                        <span>SORT BY:</span>
+                        <select><option>Most Popular / Recommended</option></select>
+                    </div>
+                    <div class="view-toggles">
+                        <button class="view-btn"><i class="fa-solid fa-list"></i></button>
+                        <button class="view-btn active"><i class="fa-solid fa-grid-2"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inventory Section -->
+        <section class="inventory-section">
+            <div class="container">
+                <div class="inventory-header">
+                    <div class="title-group">
+                        <h2>Featured Rental Inventory</h2>
+                        <span class="hub-tag">BGC & Metro Manila Hubs</span>
+                    </div>
+                    <div class="results-count">
+                        <span class="status-dot"></span> Showing <strong>3 verified vehicles</strong> matching instant booking
+                    </div>
+                </div>
+
+                <div class="vehicle-list">
+                    <!-- Card 1 -->
+                    <div class="vehicle-card-horizontal">
+                        <div class="card-img-col placeholder-bg">
+                            <div class="img-tags-top">
+                                <span class="tag tag-white"><span class="status-dot"></span> Available Now — BGC Hub</span>
+                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+                            </div>
+                            <div class="img-tag-sub"><span class="tag tag-black">4x4 LTD Flagship</span></div>
+                            <div class="img-footer">
+                                <span><i class="fa-solid fa-camera"></i> 18 HD Photos + 360° Interior</span>
+                                <span>Plate: NQM 5520</span>
+                            </div>
+                        </div>
+                        <div class="card-info-col">
+                            <div class="brand-rating">
+                                <span class="brand">TOYOTA MOTOR PHILIPPINES</span>
+                                <span class="rating"><i class="fa-solid fa-star"></i> <strong>4.94</strong> (42 rentals)</span>
+                            </div>
+                            <h3>Toyota Fortuner 2.8 4x4 LTD</h3>
+                            <p>Top-tier midsize SUV offering bulletproof reliability, leather interior, dual-zone climate control, and JBL premium audio. Ideal for...</p>
+                            <div class="specs-grid-2col">
+                                <span><i class="fa-solid fa-gear"></i> Automatic Trans</span>
+                                <span><i class="fa-solid fa-gas-pump"></i> 2.8L Diesel Turbo</span>
+                                <span><i class="fa-solid fa-users"></i> 7 Passengers</span>
+                                <span><i class="fa-solid fa-suitcase"></i> 4 Large Luggage</span>
+                            </div>
+                            <div class="feature-badges">
+                                <span class="f-badge"><i class="fa-solid fa-shield-check"></i> Insurance Included</span>
+                                <span class="f-badge"><i class="fa-solid fa-road"></i> Free Unlimited KM</span>
+                                <span class="f-badge"><i class="fa-solid fa-spray-can-sparkles"></i> Deep Sanitized</span>
+                            </div>
+                        </div>
+                        <div class="card-price-col">
+                            <div class="price-details">
+                                <span class="label">RENTAL PRICING</span>
+                                <div class="main-price"><strong>₱4,200</strong> <span>/ day</span></div>
+                                <div class="weekly-price">or <strong>₱26,500 / week</strong> (Save 10%)</div>
+                                <div class="availability-badge"><i class="fa-solid fa-car-side"></i> Available for Self-Drive or Chauffeur</div>
+                            </div>
+                            <div class="action-area">
+                                <label class="toggle-switch-container">
+                                    <span><i class="fa-solid fa-bolt"></i> Express 1-Click Hold</span>
+                                    <input type="checkbox">
+                                    <span class="slider-toggle"></span>
+                                </label>
+                                <button class="btn btn-primary full-width">Rent Now <i class="fa-solid fa-arrow-right"></i></button>
+                                <button class="btn btn-text full-width"><i class="fa-regular fa-eye"></i> Vehicle Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="vehicle-card-horizontal">
+                        <div class="card-img-col placeholder-bg">
+                            <div class="img-tags-top">
+                                <span class="tag tag-white"><span class="status-dot"></span> Available Now — Makati Hub</span>
+                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+                            </div>
+                            <div class="img-tag-sub"><span class="tag tag-blue">RS Turbo Edition</span></div>
+                            <div class="img-footer">
+                                <span><i class="fa-solid fa-camera"></i> 14 HD Photos + Dashcam Equipped</span>
+                                <span>Plate: CBX 1092</span>
+                            </div>
+                        </div>
+                        <div class="card-info-col">
+                            <div class="brand-rating">
+                                <span class="brand">HONDA CARS PHILIPPINES</span>
+                                <span class="rating"><i class="fa-solid fa-star"></i> <strong>4.88</strong> (39 rentals)</span>
+                            </div>
+                            <h3>Honda Civic RS Turbo</h3>
+                            <p>Sporty, responsive turbocharged compact executive sedan featuring Honda SENSING safety suite, leather sport seats, Apple CarPlay...</p>
+                            <div class="specs-grid-2col">
+                                <span><i class="fa-solid fa-gear"></i> Automatic CVT</span>
+                                <span><i class="fa-solid fa-gas-pump"></i> 1.5L Turbo Petrol</span>
+                                <span><i class="fa-solid fa-users"></i> 5 Passengers</span>
+                                <span><i class="fa-solid fa-suitcase"></i> 2 Luggage Bags</span>
+                            </div>
+                            <div class="feature-badges">
+                                <span class="f-badge"><i class="fa-solid fa-video"></i> Full 4K Dashcam</span>
+                                <span class="f-badge"><i class="fa-solid fa-shield"></i> Full Coverage</span>
+                                <span class="f-badge"><i class="fa-brands fa-apple"></i> Apple CarPlay / Android</span>
+                            </div>
+                        </div>
+                        <div class="card-price-col">
+                            <div class="price-details">
+                                <span class="label">RENTAL PRICING</span>
+                                <div class="main-price"><strong>₱3,500</strong> <span>/ day</span></div>
+                                <div class="weekly-price">or <strong>₱22,000 / week</strong> (Save 10%)</div>
+                                <div class="availability-badge highlight"><i class="fa-solid fa-leaf"></i> Fuel Efficient • 17.2 km/L avg</div>
+                            </div>
+                            <div class="action-area">
+                                <button class="btn btn-primary full-width">Rent Now <i class="fa-solid fa-arrow-right"></i></button>
+                                <div class="action-links">
+                                    <button class="btn btn-text"><i class="fa-regular fa-eye"></i> Vehicle Details</button>
+                                    <button class="btn btn-text"><i class="fa-solid fa-code-compare"></i> Compare</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="vehicle-card-horizontal">
+                        <div class="card-img-col placeholder-bg">
+                            <div class="img-tags-top">
+                                <span class="tag tag-yellow"><i class="fa-solid fa-circle-exclamation"></i> Limited Stock — 2 Left Today (Manila Bay)</span>
+                                <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+                            </div>
+                            <div class="img-tag-sub"><span class="tag tag-black">Executive VIP Van</span></div>
+                            <div class="img-footer">
+                                <span><i class="fa-solid fa-star"></i> Captain Ottoman Seating + Wi-Fi Ready</span>
+                                <span>Plate: NQD 4018</span>
+                            </div>
+                        </div>
+                        <div class="card-info-col">
+                            <div class="brand-rating">
+                                <span class="brand">TOYOTA LUXURY DIVISION</span>
+                                <span class="rating"><i class="fa-solid fa-star"></i> <strong>4.98</strong> (81 rentals)</span>
+                            </div>
+                            <h3>Toyota HiAce Super Grandia Elite</h3>
+                            <p>Flagship luxury people mover featuring captain's chairs with Ottoman footrests, power sliding doors, dual panoramic moonroof, and whisper-...</p>
+                            <div class="specs-grid-2col">
+                                <span><i class="fa-solid fa-gear"></i> 6-Speed Automatic</span>
+                                <span><i class="fa-solid fa-gas-pump"></i> 2.8L Diesel</span>
+                                <span><i class="fa-solid fa-users"></i> 10 Passengers</span>
+                                <span><i class="fa-solid fa-suitcase"></i> 6 Large Luggage</span>
+                            </div>
+                            <div class="feature-badges">
+                                <span class="f-badge"><i class="fa-solid fa-user-tie"></i> Chauffeur Optional</span>
+                                <span class="f-badge"><i class="fa-solid fa-wifi"></i> On-board 5G Wi-Fi</span>
+                                <span class="f-badge"><i class="fa-solid fa-crown"></i> First-Class Comfort</span>
+                            </div>
+                        </div>
+                        <div class="card-price-col">
+                            <div class="price-details">
+                                <span class="label">RENTAL PRICING</span>
+                                <div class="main-price"><strong>₱5,800</strong> <span>/ day</span></div>
+                                <div class="weekly-price">or <strong>₱35,000 / week</strong> (Save 12%)</div>
+                                <div class="availability-badge highlight-blue"><i class="fa-solid fa-briefcase"></i> Diplomatic & VIP Preferred</div>
+                            </div>
+                            <div class="action-area">
+                                <button class="btn btn-primary full-width">Rent Now <i class="fa-solid fa-arrow-right"></i></button>
+                                <button class="btn btn-secondary-light full-width"><i class="fa-solid fa-user-tie"></i> Book with Professional Driver</button>
+                                <button class="btn btn-text full-width"><i class="fa-regular fa-eye"></i> View Specifications & Amenities</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Corporate Banner -->
+                <div class="corporate-banner">
+                    <div class="corp-content">
+                        <div class="corp-icon"><i class="fa-solid fa-building"></i></div>
+                        <div>
+                            <h3>Need a custom long-term or fleet package?</h3>
+                            <p>Corporate invoicing, weekly rate deductions, and multi-unit logistics available on request.</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline-dark"><i class="fa-regular fa-envelope"></i> Inquire Corporate Rates</button>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination-bar">
+                    <div class="page-info">Showing <strong>3</strong> of <strong>28</strong> available vehicles • Page 1 of 10</div>
+                    <div class="page-controls">
+                        <button class="page-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <span>...</span>
+                        <button class="page-btn">10</button>
+                        <button class="page-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                    <button class="btn btn-secondary-light">Load More Vehicles (25 remaining)</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col brand-col">
+                    <div class="footer-logo">
+                        <i class="fa-solid fa-car-side"></i> <span>DriveSphere</span>
+                    </div>
+                    <p>Your Premier Philippine Vehicle Rental & Smart Fleet Management Platform</p>
+                    <div class="social-links">
+                        <div class="social-icon-placeholder"><i class="fa-brands fa-facebook-f"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-solid fa-share-nodes"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-regular fa-envelope"></i></div>
+                        <div class="social-icon-placeholder"><i class="fa-regular fa-star"></i></div>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>ABOUT US</h4>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Fleet Network</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>LEGAL & COMPLIANCE</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="policies.html">Privacy Policy</a></li>
+                        <li><a href="#">Rental Agreement</a></li>
+                        <li><a href="#">Insurance Coverage</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>GET HELP</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">24/7 Roadside Assistance</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
+                        <li><a href="#">Branch Locations</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-middle">
+                <div class="contact-info">
+                    <span><i class="fa-solid fa-phone"></i> 24/7 Hotline: <strong>(02) 8888-DRIVE</strong></span>
+                    <span><i class="fa-regular fa-envelope"></i> support@drivesphere.ph</span>
+                    <span><i class="fa-solid fa-location-dot"></i> BGC, Taguig City, Philippines</span>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">© 2026 DriveSphere Philippines Inc. All rights reserved.</div>
+                <div class="footer-bottom-links">
+                    <span>Enterprise Fleet Reliability</span> • <span>Island-Wide Mobility</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

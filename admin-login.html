@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveSphere Enterprise - Admin Login</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="admin-page-bg">
+
+    <!-- Enterprise Header -->
+    <header class="enterprise-header">
+        <div class="container eh-container">
+            
+            <!-- 1. Left: Enterprise Logo -->
+            <div class="ent-logo-group">
+                <div class="logo">
+                    <img src="images/DriveSphere_logo.jpg" alt="DriveSphere Logo">
+                </div>
+                <div class="ent-logo-text">
+                    <div class="ent-logo-title">DriveSphere <span class="ent-badge">ENTERPRISE</span>
+                    </div>
+                    <div class="ent-logo-subtitle">Philippine Mobility & Fleet</div>
+                </div>
+            </div>
+
+            <!-- 2. Center: Gateway Links -->
+            <div class="eh-center-links">
+                <a href="#" class="active">Portal Gateway</a>
+                <a href="#">System Status</a>
+                <a href="#">Documentation</a>
+                <span class="ssl-pill"><i class="fa-solid fa-lock"></i> 256-Bit SSL Secured</span>
+            </div>
+
+            <!-- 3. Right: Command Profile -->
+            <div class="eh-right-links">
+                <div class="eh-command-text">
+                    <strong>ENTERPRISE FLEET COMMAND</strong>
+                    <span>Admin Portal Gateway</span>
+                </div>
+                <a href="help.html" class="eh-help"><i class="fa-regular fa-circle-question"></i> Help Center</a>
+                <button class="eh-user-icon"><i class="fa-solid fa-user"></i></button>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <div class="admin-card-wrapper">
+            <!-- Top Blue Bar -->
+            <div class="lc-top-gradient" style="background: #0ea5e9;"></div>
+            
+            <div class="cc-header" style="justify-content: space-between; margin-bottom: 24px;">
+                <div class="lc-badge">FLEET COMMAND GATEWAY</div>
+                <div class="lc-secure" style="color: #0f172a;"><i class="fa-solid fa-shield-halved" style="color: #10b981;"></i> 256-Bit SSL Encrypted</div>
+            </div>
+            
+            <h1>Administrator Login</h1>
+            <p class="login-subtitle">Enter your enterprise credentials to access DriveSphere Fleet Dispatch, Telematics Console, and Operational Controls.</p>
+
+            <!-- Stats Row -->
+            <div class="admin-stats-row">
+                <div class="stat-box">
+                    <span>NCR NODES</span>
+                    <strong>14/14</strong>
+                </div>
+                <div class="stat-box">
+                    <span>ACTIVE UNITS</span>
+                    <strong style="color: #0284c7;">1,842</strong>
+                </div>
+                <div class="stat-box">
+                    <span>AUTH STATUS</span>
+                    <strong style="color: #10b981;">Standby</strong>
+                </div>
+            </div>
+
+            <form class="login-form" action="admin-confirm.html">
+                <div class="form-group">
+                    <label>ADMINISTRATOR USERNAME OR WORKSTATION ID <span class="req">*</span></label>
+                    <div class="input-icon-wrapper admin-input">
+                        <i class="fa-solid fa-id-badge"></i>
+                        <input type="email" placeholder="admin.dispatch@drivesphere.ph" required>
+                    </div>
+                </div>
+                
+                <!-- PASSWORD INPUT -->
+                <div class="form-group">
+                    <div class="label-row">
+                        <label>PASSWORD <span class="req">*</span></label>
+                        <a href="#" class="forgot-pw">Forgot Credentials?</a>
+                    </div>
+                    <div class="input-icon-wrapper admin-input">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Enter your password" id="adminPasswordInput" required>
+                    </div>
+                </div>
+
+                <!-- SHOW PASSWORD CHECKBOX (INLINE SCRIPT) -->
+                <div class="checkbox-row" style="margin-top: -8px; margin-bottom: 24px;">
+                    <input type="checkbox" id="showPwCheckAdmin" style="cursor: pointer; width: 14px; height: 14px;" onchange="document.getElementById('adminPasswordInput').type = this.checked ? 'text' : 'password';">
+                    <label for="showPwCheckAdmin" style="cursor: pointer; font-size: 11px; font-weight: 600; color: #475569;">Show Password</label>
+                </div>
+
+                <button type="submit" class="btn-dark-full" style="background: #0f172a;">LOGIN <i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+
+            <div class="lc-footer" style="border-top: none; padding-top: 16px;">
+                <p>Don't have a registered Fleet Administrator account? <a href="#">Register Account</a></p>
+                <a href="login.html" class="switch-portal-btn">SWITCH TO CUSTOMER PORTAL LOGIN <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="admin-card-bottom-bar">
+                <span><i class="fa-solid fa-microchip"></i> FIPS 140-2 Level 3 Ready</span>
+                <span><i class="fa-solid fa-server"></i> NCR Hub #02</span>
+            </div>
+        </div>
+        
+        <div class="admin-trust-badges">
+            <span><i class="fa-solid fa-file-signature"></i> NPC Registration PH-NCR-2025</span>
+            <span class="dot">•</span>
+            <span><i class="fa-regular fa-circle-check"></i> SOC-2 Type II Certified</span>
+        </div>
+    </main>
+
+    <!-- Enterprise Footer -->
+    <footer class="enterprise-footer">
+        <div class="container ef-container">
+            <div class="ef-col brand-col">
+                <h3>DriveSphere Philippines Inc.</h3>
+                <p>Enterprise Fleet Systems & Automated Logistics Infrastructure for institutional operations across Metro Manila, Cebu, and Davao network hubs.</p>
+                <div class="ef-contact"><i class="fa-solid fa-headset"></i> 24/7 Hotline: (02) 8888-DRIVE</div>
+            </div>
+            <div class="ef-col">
+                <h4>COMPLIANCE & TRUST</h4>
+                <ul>
+                    <li><i class="fa-solid fa-shield-check"></i> Privacy Compliance (RA 10173)</li>
+                    <li><i class="fa-solid fa-shield-halved"></i> Enterprise Security Terms</li>
+                    <li><i class="fa-solid fa-database"></i> Data Residency (PH NCR Zone)</li>
+                </ul>
+            </div>
+            <div class="ef-col">
+                <h4>FLEET INFRASTRUCTURE</h4>
+                <ul>
+                    <li>NOC Telemetry Services</li>
+                    <li>Fleet Command API Status</li>
+                    <li>Disaster Recovery Protocol</li>
+                </ul>
+            </div>
+        </div>
+        <div class="ef-bottom">
+            <div class="container ef-bottom-container">
+                <div>© 2026 DriveSphere Philippines Inc. All rights reserved. Registered Enterprise Fleet Portal.</div>
+                <div class="ef-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Security Protocol</a>
+                    <a href="help.html">Help Center</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
