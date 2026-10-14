@@ -47,8 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeDropdown = document.getElementById('closeDropdown');
 
     if (accountTrigger && accountDropdown) {
-        
-        // Toggle dropdown on click
         accountTrigger.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation(); 
@@ -56,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
             accountDropdown.classList.toggle('show');
             accountTrigger.classList.toggle('active');
             
-            // Flip the arrow icon up/down
             const chevron = accountTrigger.querySelector('.chevron-icon');
             if (chevron) {
                 if (chevron.classList.contains('fa-chevron-down')) {
@@ -67,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Close when clicking the 'X' button
         if (closeDropdown) {
             closeDropdown.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -79,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Close when clicking anywhere else on the page
         document.addEventListener('click', (e) => {
             if (!accountTrigger.contains(e.target) && !accountDropdown.contains(e.target)) {
                 if (accountDropdown.classList.contains('show')) {
@@ -92,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Prevent clicks inside the dropdown from closing it
         accountDropdown.addEventListener('click', (e) => {
             e.stopPropagation();
         });
@@ -130,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* =======================================================
-                    4. RENTAL PAGE LOGIC
+                        4. RENTAL PAGE LOGIC
        ======================================================= */
     const searchForm = document.getElementById('rentalSearchForm');
     if (searchForm) {
@@ -171,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* =======================================================
-                    5. HELP PAGE & ACCORDION LOGIC
+                        5. HELP PAGE & ACCORDION LOGIC
        ======================================================= */
     const accordions = document.querySelectorAll('.accordion-header');
     if (accordions.length > 0) {
@@ -180,19 +174,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 const item = acc.parentElement;
                 const icon = acc.querySelector('.toggle-icon i');
                 
-                if (item.classList.contains('active')) {
-                    item.classList.remove('active');
-                    icon.classList.replace('fa-minus', 'fa-plus');
+                if (item.classList.contains('active') || item.classList.contains('open')) {
+                    item.classList.remove('active', 'open');
+                    const body = item.querySelector('.accordion-body');
+                    if (body) body.style.display = 'none';
+                    if (icon) icon.classList.replace('fa-minus', 'fa-plus');
                 } else {
-                    item.classList.add('active');
-                    icon.classList.replace('fa-plus', 'fa-minus');
+                    item.classList.add('active', 'open');
+                    const body = item.querySelector('.accordion-body');
+                    if (body) body.style.display = 'block';
+                    if (icon) icon.classList.replace('fa-plus', 'fa-minus');
                 }
             });
         });
     }
 
     /* =======================================================
-                    6. POLICIES PAGE LOGIC
+                        6. POLICIES PAGE LOGIC
        ======================================================= */
     const tocLinks = document.querySelectorAll('.toc-menu a');
     const articles = document.querySelectorAll('.policy-article');
@@ -223,61 +221,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
         articles.forEach(article => articleObserver.observe(article));
     }
-});
 
-/*  =======================================================
-                    LOGIN PAGE LOGIC
-    ======================================================= */
-    const togglePw = document.getElementById('togglePw');
-    const pwInput = document.getElementById('passwordInput');
-    
-    if (togglePw && pwInput) {
-        togglePw.addEventListener('click', () => {
-            if (pwInput.type === 'password') {
-                pwInput.type = 'text';
-                togglePw.classList.replace('fa-eye', 'fa-eye-slash');
+    /* =======================================================
+                        7. CUSTOMER LOGIN PAGE LOGIC
+       ======================================================= */
+    const customerLoginForm = document.querySelector('.login-main .login-form:not(#adminLoginForm)');
+
+    if (customerLoginForm) {
+        customerLoginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const emailInput = customerLoginForm.querySelector('input[type="email"]');
+            const pwInput = customerLoginForm.querySelector('#passwordInput');
+
+            if ((pwInput && pwInput.value.length < 6) || (emailInput && emailInput.value.includes('fail'))) {
+                window.location.href = 'invalid-input.html';
             } else {
-                pwInput.type = 'password';
-                togglePw.classList.replace('fa-eye-slash', 'fa-eye');
+                window.location.href = 'login-confirm.html';
             }
         });
     }
 
     /* =======================================================
-                        ADMIN LOGIN PAGE LOGIC
+                        8. ADMIN LOGIN PAGE LOGIC
        ======================================================= */
-const adminLoginForm = document.getElementById('adminLoginForm');
+    const adminLoginForm = document.getElementById('adminLoginForm') || document.querySelector('.admin-main .login-form');
+
     if (adminLoginForm) {
         adminLoginForm.addEventListener('submit', (e) => {
             e.preventDefault(); 
-            // Redirects to the new admin confirmation screen
-            window.location.href = 'admin-confirm.html';
-        });
-    }
+            
+            const adminEmail = adminLoginForm.querySelector('input[type="email"]');
+            const adminPw = adminLoginForm.querySelector('#adminPasswordInput');
 
-    const toggleAdminPw = document.getElementById('toggleAdminPw');
-    const adminPwInput = document.getElementById('adminPasswordInput');
-    
-    if (toggleAdminPw && adminPwInput) {
-        toggleAdminPw.addEventListener('click', () => {
-            if (adminPwInput.type === 'password') {
-                adminPwInput.type = 'text';
-                toggleAdminPw.classList.replace('fa-eye', 'fa-eye-slash');
+            if ((adminEmail && !adminEmail.value.endsWith('@drivesphere.ph')) || (adminPw && adminPw.value.length < 6)) {
+                window.location.href = 'invalid-input.html';
             } else {
-                adminPwInput.type = 'password';
-                toggleAdminPw.classList.replace('fa-eye-slash', 'fa-eye');
+                window.location.href = 'admin-confirm.html';
             }
         });
     }
     
     /* =======================================================
-            UNIVERSAL AUTHENTICATION & VALIDATION LOGIC
+            9. UNIVERSAL AUTHENTICATION & VALIDATION LOGIC
        ======================================================= */
 
-    // 1. Universal Password Visibility Toggle (Works on all pages)
+    // A. Universal Password Visibility Toggle
     document.addEventListener('click', (e) => {
         if (e.target.classList.contains('toggle-pw')) {
-            // Find the input field immediately before the clicked eye icon
             const passwordInput = e.target.previousElementSibling;
             
             if (passwordInput && passwordInput.tagName === 'INPUT') {
@@ -292,47 +283,180 @@ const adminLoginForm = document.getElementById('adminLoginForm');
         }
     });
 
-    // 2. Registration Form Data Retention & Validation
-    const registerForm = document.getElementById('registerForm'); // Ensure your <form> has id="registerForm"
+    // B. Customer Registration Form
+    const registerForm = document.getElementById('registerForm'); 
     const regPw = document.getElementById('regPassword');
     const regConfirmPw = document.getElementById('regConfirmPassword');
 
     if (registerForm && regPw && regConfirmPw) {
         registerForm.addEventListener('submit', (e) => {
             if (regPw.value !== regConfirmPw.value) {
-                // CRITICAL: This stops the page from reloading and deleting the typed name/email
                 e.preventDefault(); 
-                
-                // Alert the user and clear ONLY the confirm password field for them to try again
                 alert('Passwords do not match. Please check your spelling and try again.');
                 regConfirmPw.value = '';
                 regConfirmPw.focus();
-                
             } else {
-                // If they match, proceed to the confirmation screen
                 e.preventDefault(); 
-                window.location.href = 'login-confirm.html';
+                window.location.href = 'register-confirm.html';
             }
         });
     }
 
-    // Universal "Show Password" Checkbox Toggle (Bulletproof Version)
+    // C. Admin Registration Form
+    const adminRegisterForm = document.getElementById('adminRegisterForm');
+    const adminRegPw = document.getElementById('adminRegPassword');
+    const adminRegConfirmPw = document.getElementById('adminRegConfirmPassword');
+
+    if (adminRegisterForm && adminRegPw && adminRegConfirmPw) {
+        adminRegisterForm.addEventListener('submit', (e) => {
+            if (adminRegPw.value !== adminRegConfirmPw.value) {
+                e.preventDefault(); 
+                alert('Passwords do not match. Please check your spelling and try again.');
+                adminRegConfirmPw.value = '';
+                adminRegConfirmPw.focus();
+            } else {
+                e.preventDefault();
+                window.location.href = 'admin-confirm.html';
+            }
+        });
+    }
+
+    // D. Universal "Show Password" Checkbox Toggle
     document.addEventListener('change', (e) => {
         if (e.target.classList.contains('universal-show-pw')) {
-            
-            // 1. Grab all possible password fields from all 3 pages
-            const regPw = document.getElementById('regPassword');
-            const regConfirm = document.getElementById('regConfirmPassword');
-            const userLogin = document.getElementById('passwordInput');
-            const adminLogin = document.getElementById('adminPasswordInput');
+            const passFields = [
+                document.getElementById('regPassword'),
+                document.getElementById('regConfirmPassword'),
+                document.getElementById('passwordInput'),
+                document.getElementById('adminPasswordInput'),
+                document.getElementById('adminRegPassword'),
+                document.getElementById('adminRegConfirmPassword')
+            ];
 
-            // 2. Decide if we are showing or hiding
             const newType = e.target.checked ? 'text' : 'password';
 
-            // 3. Apply the change to whichever fields are currently on the screen
-            if (regPw) regPw.type = newType;
-            if (regConfirm) regConfirm.type = newType;
-            if (userLogin) userLogin.type = newType;
-            if (adminLogin) adminLogin.type = newType;
+            passFields.forEach(field => {
+                if (field) field.type = newType;
+            });
         }
     });
+
+    /* =======================================================
+        10. AUTOMATIC ACTIVE PAGE NAVIGATION HIGHLIGHTER
+       ======================================================= */
+
+    // Route login confirmation directly to Customer Portal
+    if (window.location.pathname.includes('login-confirm.html')) {
+        const confirmBtn = document.querySelector('.confirm-card-wrapper a.btn-dark-full');
+        if (confirmBtn) {
+            confirmBtn.setAttribute('href', 'customer-rent.html');
+            confirmBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = 'customer-rent.html';
+            });
+        }
+    }
+
+    // Auto-Active Navigation Tab Switcher
+    const updateActivePortalTab = () => {
+        const currentPath = window.location.pathname.split('/').pop() || 'customer-rent.html';
+        const currentHash = window.location.hash;
+        const navLinks = document.querySelectorAll('.customer-nav a');
+
+        if (navLinks.length === 0) return;
+
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (!href) return;
+
+            const targetPage = href.split('/').pop().split('#')[0];
+
+            link.classList.remove('active', 'c-nav-pill');
+            link.classList.add('c-nav-link');
+
+            if (currentPath === 'customer-about.html' && targetPage === 'customer-about.html') {
+                link.classList.add('active');
+            } else if (currentPath === 'customer-help.html' && targetPage === 'customer-help.html') {
+                link.classList.add('active');
+            } else if ((currentPath === 'rental.html' || currentHash === '#vehicleSearchInput') && (targetPage === 'rental.html' || href.includes('#vehicleSearchInput'))) {
+                link.classList.add('active');
+            } else if ((currentPath === 'customer-rent.html' || currentPath === '') && currentHash !== '#vehicleSearchInput' && targetPage === 'customer-rent.html') {
+                link.classList.add('active');
+            }
+        });
+    };
+
+    updateActivePortalTab();
+    window.addEventListener('hashchange', updateActivePortalTab);
+
+    /* =======================================================
+        11. VEHICLE FILTERING & FAVORITES LOGIC
+       ======================================================= */
+
+    const portalCategoryPills = document.querySelectorAll('.pfs-pills-row .c-pill');
+    const portalVehicleCards = document.querySelectorAll('.portal-vehicle-card');
+
+    if (portalCategoryPills.length > 0 && portalVehicleCards.length > 0) {
+        portalCategoryPills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                portalCategoryPills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+
+                const selectedCategory = pill.getAttribute('data-category');
+
+                portalVehicleCards.forEach(card => {
+                    const cardCategory = card.querySelector('.v-category')?.innerText.toLowerCase() || '';
+                    
+                    if (selectedCategory === 'all') {
+                        card.style.display = 'block';
+                    } else if (selectedCategory === 'suv' && cardCategory.includes('suv')) {
+                        card.style.display = 'block';
+                    } else if (selectedCategory === 'sedan' && cardCategory.includes('sedan')) {
+                        card.style.display = 'block';
+                    } else if (selectedCategory === 'van' && cardCategory.includes('van')) {
+                        card.style.display = 'block';
+                    } else if (selectedCategory === 'electric' && (cardCategory.includes('electric') || cardCategory.includes('hatch'))) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+
+    const vehicleSearchInput = document.getElementById('vehicleSearchInput');
+    if (vehicleSearchInput && portalVehicleCards.length > 0) {
+        vehicleSearchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+
+            portalVehicleCards.forEach(card => {
+                const title = card.querySelector('.v-title')?.innerText.toLowerCase() || '';
+                const category = card.querySelector('.v-category')?.innerText.toLowerCase() || '';
+                const status = card.querySelector('.status-tag')?.innerText.toLowerCase() || '';
+
+                if (title.includes(query) || category.includes(query) || status.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    }
+
+    const favHearts = document.querySelectorAll('.btn-fav-heart');
+    if (favHearts.length > 0) {
+        favHearts.forEach(heart => {
+            heart.addEventListener('click', () => {
+                const icon = heart.querySelector('i');
+                heart.classList.toggle('active');
+                if (icon.classList.contains('fa-regular')) {
+                    icon.classList.replace('fa-regular', 'fa-solid');
+                } else {
+                    icon.classList.replace('fa-solid', 'fa-regular');
+                }
+            });
+        });
+    }
+
+}); // End of DOMContentLoaded

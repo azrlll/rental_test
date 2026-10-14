@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DriveSphere - Create Customer Account</title>
     <link rel="stylesheet" href="css/global.css">
+    <!-- FontAwesome for the icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="login-page-bg">
@@ -19,11 +21,10 @@
                     <small>PHILIPPINE MOBILITY & FLEET</small>
                 </div>
             </div>
-                <div class="lh-links reg-header-right">
+            <div class="lh-links reg-header-right">
                 <a href="login.html" class="reg-prompt" style="text-decoration: none; color: var(--primary-blue); font-weight: 600; transition: 0.2s;">
                     Already have an account?
                 </a>
-            </div>
             </div>
         </div>
     </header>
@@ -41,7 +42,8 @@
                 <h1>Create Customer Account</h1>
                 <p class="login-subtitle">Join DriveSphere to reserve premium SUVs, sedans, and passenger vans across Metro Manila, Clark, and Cebu.</p>
 
-                <form class="login-form" id="registerForm">
+                <!-- UPDATED FORM TAG WITH ACTION ATTRIBUTE -->
+                <form class="login-form" id="registerForm" action="register-confirm.html">
                     <div class="form-group">
                         <label>FULL NAME <span class="req">*</span></label>
                         <div class="input-icon-wrapper">
@@ -58,25 +60,34 @@
                         </div>
                     </div>
 
-                    <!-- PASSWORD INPUTS -->
-                    <div class="form-row-2col">
-                        <div class="form-group">
+                    <!-- PASSWORD INPUTS WITH FUNCTIONAL EYE ICONS -->
+                    <div class="form-row-2col" style="margin-bottom: 24px;">
+                        <div class="form-group" style="margin-bottom: 0;">
                             <label>PASSWORD <span class="req">*</span></label>
-                            <input type="password" placeholder="Min. 8 characters" class="standard-input" id="regPassword" required>
+                            <div class="input-icon-wrapper">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" placeholder="Min. 8 characters" class="standard-input" id="regPassword" required>
+                                <i class="fa-regular fa-eye toggle-pw" style="cursor: pointer;" onclick="
+                                    this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; 
+                                    this.classList.toggle('fa-eye'); 
+                                    this.classList.toggle('fa-eye-slash');
+                                "></i>
+                            </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="margin-bottom: 0;">
                             <label>CONFIRM PASSWORD <span class="req">*</span></label>
-                            <input type="password" placeholder="Repeat password" class="standard-input" id="regConfirmPassword" required>
+                            <div class="input-icon-wrapper">
+                                <i class="fa-solid fa-arrow-rotate-right"></i>
+                                <input type="password" placeholder="Repeat password" class="standard-input" id="regConfirmPassword" required>
+                                <i class="fa-regular fa-eye toggle-pw" style="cursor: pointer;" onclick="
+                                    this.previousElementSibling.type = this.previousElementSibling.type === 'password' ? 'text' : 'password'; 
+                                    this.classList.toggle('fa-eye'); 
+                                    this.classList.toggle('fa-eye-slash');
+                                "></i>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- SHOW PASSWORD CHECKBOX (INLINE SCRIPT) -->
-                    <div class="checkbox-row" style="margin-top: 8px; margin-bottom: 24px;">
-                        <input type="checkbox" id="showPwCheckReg" style="cursor: pointer; width: 14px; height: 14px;" onchange="document.getElementById('regPassword').type = this.checked ? 'text' : 'password'; document.getElementById('regConfirmPassword').type = this.checked ? 'text' : 'password';">
-                        <label for="showPwCheckReg" style="cursor: pointer; font-size: 11px; font-weight: 600; color: #475569;">Show Password</label>
-                    </div>
-
-                    <!-- THIS IS YOUR EXISTING CODE -->
                     <div class="checkbox-row terms-row">
                         <input type="checkbox" id="agreeTerms" required>
                         <label for="agreeTerms">I agree to the DriveSphere <a href="#">Terms of Rental Service</a>, <a href="#">Security Deposit Guidelines</a>, and confirm compliance with Philippine Data Privacy Act (RA 10173).</label>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveSphere - Welcome Back, Carlos!</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="customer-portal-bg">
+
+    <!-- Authenticated Header -->
+    <header class="main-header customer-header">
+        <div class="container header-container">
+            <div class="logo-group">
+                <a href="customer-rent.html" class="site-logo">
+                    <img src="images/DriveSphere_logo.jpg" alt="DriveSphere Logo" class="header-logo-img">
+                </a>
+                <div class="logo-text">
+                    <span class="brand-name">DriveSphere</span>
+                    <small class="brand-tag">PHILIPPINE MOBILITY & FLEET</small>
+                </div>
+                <span class="portal-badge-pill">Customer Portal</span>
+            </div>
+
+            <!-- Active Link set to Home -->
+            <nav class="customer-nav">
+                <a href="customer-rent.html" class="c-nav-link active">Home</a>
+                <a href="customer-rent.html#vehicleSearchInput" class="c-nav-link">Browse Vehicles</a>
+                <a href="customer-about.html" class="c-nav-link">About</a>
+                <a href="customer-help.html" class="c-nav-link">Help</a>
+            </nav>
+
+            <div class="customer-header-right">
+                <a href="#" class="btn-my-bookings">
+                    <i class="fa-regular fa-calendar-check"></i> My Bookings
+                </a>
+                
+                <button class="notification-btn" title="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notif-badge-dot"></span>
+                </button>
+
+                <div class="user-profile-badge">
+                    <div class="user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Carlos Alvarez</span>
+                        <span class="user-tier"><i class="fa-solid fa-circle-check"></i> Verified VIP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="customer-main-content">
+        <div class="container">
+            
+            <!-- Hero Welcome Banner Section -->
+            <section class="welcome-hero-banner">
+                <div class="whb-left">
+                    <div class="vip-discount-pill">
+                        <i class="fa-solid fa-gem"></i> VIP Corporate Tier • 10% Discount Auto-Applied
+                    </div>
+                    <h1>Welcome back, Carlos! Discover & Reserve Your Next Drive</h1>
+                    <p>Streamlined reservations across premium Metro Manila hubs and regional dispatch centers. Guaranteed sanitized, telemetry-monitored fleet vehicles.</p>
+                </div>
+
+                <div class="whb-widgets-stack">
+                    <div class="whb-widget-card">
+                        <div class="widget-icon icon-blue">
+                            <i class="fa-regular fa-calendar-days"></i>
+                        </div>
+                        <div class="widget-details">
+                            <span class="widget-label">ACTIVE BOOKINGS</span>
+                            <strong class="widget-value">1 Trip Ongoing</strong>
+                        </div>
+                    </div>
+
+                    <div class="whb-widget-card">
+                        <div class="widget-icon icon-teal">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div class="widget-details">
+                            <span class="widget-label">LOYALTY POINTS</span>
+                            <strong class="widget-value">2,450 pts</strong>
+                        </div>
+                    </div>
+
+                    <div class="whb-widget-card">
+                        <div class="widget-icon icon-green">
+                            <i class="fa-solid fa-key"></i>
+                        </div>
+                        <div class="widget-details">
+                            <span class="widget-label">KEYLESS ACCESS</span>
+                            <strong class="widget-value status-ready"><i class="fa-solid fa-circle"></i> Ready for Pickup</strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Search, Sorting & Filter Bar -->
+            <section class="portal-filter-section">
+                <div class="pfs-top-row">
+                    <div class="pfs-search-wrapper">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="vehicleSearchInput" placeholder="Search by vehicle model, brand, or hub (e.g., Fortuner, HiAce, BGC Central)...">
+                    </div>
+
+                    <div class="pfs-controls">
+                        <button class="btn-filter-categories">
+                            <i class="fa-solid fa-sliders"></i> Filter Categories <span class="badge-num">5</span>
+                        </button>
+                        
+                        <div class="sort-select-wrapper">
+                            <select id="sortVehiclesSelect">
+                                <option value="recommended">Sort: Recommended</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Highest Rated</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category Pills Row -->
+                <div class="pfs-pills-row">
+                    <button class="c-pill active" data-category="all">All Vehicles (24)</button>
+                    <button class="c-pill" data-category="suv">SUVs (8)</button>
+                    <button class="c-pill" data-category="sedan">Executive Sedans (6)</button>
+                    <button class="c-pill" data-category="van">Vans & Shuttles (5)</button>
+                    <button class="c-pill" data-category="electric">Electric & Hybrid (5)</button>
+                </div>
+            </section>
+
+            <!-- Vehicles Grid (6 Cards Displayed) -->
+            <section class="portal-vehicles-grid">
+                
+                <!-- CARD 1 -->
+                <div class="portal-vehicle-card">
+                    <div class="pvc-image-wrapper">
+                        <img src="images/vehicles/fortuner.jpg" alt="Toyota Fortuner LTD 2.8L 4x4" onerror="this.src='https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80';">
+                        <span class="status-tag tag-green"><i class="fa-solid fa-circle"></i> Available Now • BGC Hub</span>
+                        <button class="btn-fav-heart" title="Save to Favorites"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                    <div class="pvc-body">
+                        <div class="pvc-header">
+                            <span class="v-category">PREMIUM FULL-SIZE SUV</span>
+                            <span class="v-rating"><i class="fa-solid fa-star"></i> 4.9 <small>(132 trips)</small></span>
+                        </div>
+                        <h3 class="v-title">Toyota Fortuner LTD 2.8L 4x4</h3>
+                        
+                        <div class="v-specs-grid">
+                            <span><i class="fa-solid fa-user-group"></i> 7 Seats</span>
+                            <span><i class="fa-solid fa-gear"></i> Automatic</span>
+                            <span><i class="fa-solid fa-gas-pump"></i> Diesel Turbo</span>
+                            <span><i class="fa-solid fa-car-side"></i> 4WD</span>
+                        </div>
+
+                        <div class="v-price-row">
+                            <div class="price-box">
+                                <span class="rate-label">Daily Base Rate</span>
+                                <strong class="rate-amount">₱4,200 <small>/ day</small></strong>
+                            </div>
+                            <span class="vip-discount-tag">₱3,780 with VIP</span>
+                        </div>
+
+                        <div class="v-actions-row">
+                            <a href="rental.html" class="btn-v-details">Vehicle Details</a>
+                            <a href="rental.html" class="btn-v-rent">Rent Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="portal-vehicle-card">
+                    <div class="pvc-image-wrapper">
+                        <img src="images/vehicles/civic.jpg" alt="Honda Civic RS Turbo" onerror="this.src='https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=600&q=80';">
+                        <span class="status-tag tag-green"><i class="fa-solid fa-circle"></i> Available Now • Makati Hub</span>
+                        <button class="btn-fav-heart" title="Save to Favorites"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                    <div class="pvc-body">
+                        <div class="pvc-header">
+                            <span class="v-category">EXECUTIVE SPORT SEDAN</span>
+                            <span class="v-rating"><i class="fa-solid fa-star"></i> 4.8 <small>(89 trips)</small></span>
+                        </div>
+                        <h3 class="v-title">Honda Civic RS Turbo</h3>
+                        
+                        <div class="v-specs-grid">
+                            <span><i class="fa-solid fa-user-group"></i> 5 Seats</span>
+                            <span><i class="fa-solid fa-gear"></i> CVT AT</span>
+                            <span><i class="fa-solid fa-gas-pump"></i> 1.5L Turbo</span>
+                            <span><i class="fa-solid fa-shield-halved"></i> Sensing</span>
+                        </div>
+
+                        <div class="v-price-row">
+                            <div class="price-box">
+                                <span class="rate-label">Daily Base Rate</span>
+                                <strong class="rate-amount">₱3,500 <small>/ day</small></strong>
+                            </div>
+                            <span class="vip-discount-tag">₱3,150 with VIP</span>
+                        </div>
+
+                        <div class="v-actions-row">
+                            <a href="rental.html" class="btn-v-details">Vehicle Details</a>
+                            <a href="rental.html" class="btn-v-rent">Rent Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="portal-vehicle-card">
+                    <div class="pvc-image-wrapper">
+                        <img src="images/vehicles/hiace.jpg" alt="Toyota HiAce Super Grandia Elite" onerror="this.src='https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80';">
+                        <span class="status-tag tag-orange"><i class="fa-solid fa-circle"></i> Limited Stock • 2 Left</span>
+                        <button class="btn-fav-heart" title="Save to Favorites"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                    <div class="pvc-body">
+                        <div class="pvc-header">
+                            <span class="v-category">VIP EXECUTIVE VAN</span>
+                            <span class="v-rating"><i class="fa-solid fa-star"></i> 5.0 <small>(204 trips)</small></span>
+                        </div>
+                        <h3 class="v-title">Toyota HiAce Super Grandia Elite</h3>
+                        
+                        <div class="v-specs-grid">
+                            <span><i class="fa-solid fa-user-group"></i> 10 Seats</span>
+                            <span><i class="fa-solid fa-gear"></i> Automatic</span>
+                            <span><i class="fa-solid fa-gas-pump"></i> 2.8L Diesel</span>
+                            <span><i class="fa-solid fa-chair"></i> Captain</span>
+                        </div>
+
+                        <div class="v-price-row">
+                            <div class="price-box">
+                                <span class="rate-label">Daily Base Rate</span>
+                                <strong class="rate-amount">₱5,800 <small>/ day</small></strong>
+                            </div>
+                            <span class="vip-discount-tag">₱5,220 with VIP</span>
+                        </div>
+
+                        <div class="v-actions-row">
+                            <a href="rental.html" class="btn-v-details">Vehicle Details</a>
+                            <a href="rental.html" class="btn-v-rent">Rent Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="portal-vehicle-card">
+                    <div class="pvc-image-wrapper">
+                        <img src="images/vehicles/montero.jpg" alt="Mitsubishi Montero Sport GT" onerror="this.src='https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=600&q=80';">
+                        <span class="status-tag tag-green"><i class="fa-solid fa-circle"></i> Available Now • Clark Hub</span>
+                        <button class="btn-fav-heart" title="Save to Favorites"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                    <div class="pvc-body">
+                        <div class="pvc-header">
+                            <span class="v-category">MIDSIZE 7-SEAT SUV</span>
+                            <span class="v-rating"><i class="fa-solid fa-star"></i> 4.7 <small>(74 trips)</small></span>
+                        </div>
+                        <h3 class="v-title">Mitsubishi Montero Sport GT</h3>
+                        
+                        <div class="v-specs-grid">
+                            <span><i class="fa-solid fa-user-group"></i> 7 Seats</span>
+                            <span><i class="fa-solid fa-gear"></i> 8-Speed AT</span>
+                            <span><i class="fa-solid fa-gas-pump"></i> 2.4L MIVEC</span>
+                            <span><i class="fa-solid fa-sun"></i> Sunroof</span>
+                        </div>
+
+                        <div class="v-price-row">
+                            <div class="price-box">
+                                <span class="rate-label">Daily Base Rate</span>
+                                <strong class="rate-amount">₱3,900 <small>/ day</small></strong>
+                            </div>
+                            <span class="vip-discount-tag">₱3,510 with VIP</span>
+                        </div>
+
+                        <div class="v-actions-row">
+                            <a href="rental.html" class="btn-v-details">Vehicle Details</a>
+                            <a href="rental.html" class="btn-v-rent">Rent Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 5 -->
+                <div class="portal-vehicle-card">
+                    <div class="pvc-image-wrapper">
+                        <img src="images/vehicles/mazda3.jpg" alt="Mazda 3 Fastback Premium" onerror="this.src='https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=600&q=80';">
+                        <span class="status-tag tag-green"><i class="fa-solid fa-circle"></i> Available Now • BGC Hub</span>
+                        <button class="btn-fav-heart" title="Save to Favorites"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                    <div class="pvc-body">
+                        <div class="pvc-header">
+                            <span class="v-category">PREMIUM COMPACT HATCH</span>
+                            <span class="v-rating"><i class="fa-solid fa-star"></i> 4.9 <small>(61 trips)</small></span>
+                        </div>
+                        <h3 class="v-title">Mazda 3 Fastback Premium</h3>
+                        
+                        <div class="v-specs-grid">
+                            <span><i class="fa-solid fa-user-group"></i> 5 Seats</span>
+                            <span><i class="fa-solid fa-gear"></i> Automatic</span>
+                            <span><i class="fa-solid fa-leaf"></i> 2.0L SkyActiv</span>
+                            <span><i class="fa-solid fa-music"></i> Bose Audio</span>
+                        </div>
+
+                        <div class="v-price-row">
+                            <div class="price-box">
+                                <span class="rate-label">Daily Base Rate</span>
+                                <strong class="rate-amount">₱3,200 <small>/ day</small></strong>
+                            </div>
+                            <span class="vip-discount-tag">₱2,880 with VIP</span>
+                        </div>
+
+                        <div class="v-actions-row">
+                            <a href="rental.html" class="btn-v-details">Vehicle Details</a>
+                            <a href="rental.html" class="btn-v-rent">Rent Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 6 -->
+                <div class="portal-vehicle-card">
+                    <div class="pvc-image-wrapper">
+                        <img src="images/vehicles/everest.jpg" alt="Ford Everest Titanium+ 4x4" onerror="this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80';">
+                        <span class="status-tag tag-blue"><i class="fa-solid fa-bolt"></i> Instant Dispatch • Cebu Hub</span>
+                        <button class="btn-fav-heart" title="Save to Favorites"><i class="fa-regular fa-heart"></i></button>
+                    </div>
+                    <div class="pvc-body">
+                        <div class="pvc-header">
+                            <span class="v-category">FULL-SIZE ADVENTURE SUV</span>
+                            <span class="v-rating"><i class="fa-solid fa-star"></i> 4.9 <small>(118 trips)</small></span>
+                        </div>
+                        <h3 class="v-title">Ford Everest Titanium+ 4x4</h3>
+                        
+                        <div class="v-specs-grid">
+                            <span><i class="fa-solid fa-user-group"></i> 7 Seats</span>
+                            <span><i class="fa-solid fa-gear"></i> 10-Speed AT</span>
+                            <span><i class="fa-solid fa-gas-pump"></i> Bi-Turbo</span>
+                            <span><i class="fa-solid fa-moon"></i> Moonroof</span>
+                        </div>
+
+                        <div class="v-price-row">
+                            <div class="price-box">
+                                <span class="rate-label">Daily Base Rate</span>
+                                <strong class="rate-amount">₱4,600 <small>/ day</small></strong>
+                            </div>
+                            <span class="vip-discount-tag">₱4,140 with VIP</span>
+                        </div>
+
+                        <div class="v-actions-row">
+                            <a href="rental.html" class="btn-v-details">Vehicle Details</a>
+                            <a href="rental.html" class="btn-v-rent">Rent Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Pagination Row -->
+            <div class="portal-pagination-row">
+                <span class="pagination-info">Showing <strong>1-6</strong> of <strong>24</strong> vehicles available nationwide</span>
+                
+                <div class="pagination-buttons">
+                    <button class="btn-page prev-page" disabled><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="btn-page page-num active">1</button>
+                    <button class="btn-page page-num">2</button>
+                    <button class="btn-page page-num">3</button>
+                    <button class="btn-page page-num">4</button>
+                    <button class="btn-page next-page"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- VIP Advantage Banner -->
+            <section class="vip-advantage-banner">
+                <div class="vab-content">
+                    <span class="vab-sub-badge">DRIVESPHERE VIP ADVANTAGE</span>
+                    <h2>Need a bespoke long-term or multi-vehicle fleet?</h2>
+                    <p>Corporate monthly packages include dedicated keyless dispatch, driver telematics reporting, and prioritized maintenance replacement within 90 minutes anywhere in NCR.</p>
+                </div>
+                <div class="vab-actions">
+                    <a href="#" class="btn-vab-primary">Request Corporate Fleet</a>
+                    <a href="#" class="btn-vab-secondary">Contact Fleet Concierge</a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Authenticated Footer -->
+    <footer class="customer-footer">
+        <div class="container cf-container">
+            <div class="cf-col cf-brand">
+                <span class="brand-name">DriveSphere</span>
+                <p>Premier vehicle rental and smart fleet logistics infrastructure in the Philippines.</p>
+                <span class="ltfrb-badge-pill"><i class="fa-solid fa-shield-halved"></i> LTFRB Registered Fleet</span>
+            </div>
+
+            <div class="cf-col">
+                <h4>24/7 National Hotline</h4>
+                <div class="hotline-number"><i class="fa-solid fa-phone"></i> (02) 8888-DRIVE</div>
+                <p>Toll-free emergency roadside assistance and booking hotline.</p>
+            </div>
+
+            <div class="cf-col">
+                <h4>Operations & Logistics Hub</h4>
+                <p><i class="fa-solid fa-location-dot"></i> DriveSphere Mobility Hub, 32nd St. corner 5th Ave., Bonifacio Global City (BGC), Taguig, Metro Manila, Philippines</p>
+            </div>
+
+            <div class="cf-col">
+                <h4>Support & Assistance</h4>
+                <ul>
+                    <li><i class="fa-regular fa-envelope"></i> support@drivesphere.ph</li>
+                    <li><a href="customer-help.html">Help Center & FAQs</a></li>
+                    <li><a href="policies.html">Terms of Service & Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cf-bottom-bar">
+            <div class="container cf-bottom-container">
+                <div>© 2026 DriveSphere Philippines Inc. All rights reserved. Registered under LTFRB & DTI regulations.</div>
+                <div class="cf-bottom-links">
+                    <a href="policies.html">Privacy Policy</a>
+                    <a href="policies.html">Rental Terms</a>
+                    <a href="customer-help.html">Roadside Protocol</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

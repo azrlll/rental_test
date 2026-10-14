@@ -6,6 +6,8 @@
     <title>DriveSphere - User Account Login</title>
     <link rel="stylesheet" href="css/global.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for the icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="login-page-bg">
 
@@ -49,8 +51,8 @@
                     </div>
                 </div>
                 
-                <!-- PASSWORD INPUT -->
-                <div class="form-group">
+                <!-- PASSWORD INPUT WITH EYE ICON -->
+                <div class="form-group" style="margin-bottom: 32px;">
                     <div class="label-row">
                         <label>PASSWORD <span class="req">*</span></label>
                         <a href="#" class="forgot-pw">Forgot Password?</a>
@@ -58,13 +60,16 @@
                     <div class="input-icon-wrapper">
                         <i class="fa-solid fa-lock"></i>
                         <input type="password" placeholder="Enter your password" id="passwordInput" required>
+                        <i class="fa-regular fa-eye toggle-pw" id="togglePwIcon" onclick="
+                            const pwInput = document.getElementById('passwordInput'); 
+                            if(pwInput.type === 'password') { 
+                                pwInput.type = 'text'; 
+                                this.classList.replace('fa-eye', 'fa-eye-slash'); 
+                            } else { 
+                                pwInput.type = 'password'; 
+                                this.classList.replace('fa-eye-slash', 'fa-eye'); 
+                            }"></i>
                     </div>
-                </div>
-
-                <!-- SHOW PASSWORD CHECKBOX (INLINE SCRIPT) -->
-                <div class="checkbox-row" style="margin-top: -8px; margin-bottom: 24px;">
-                    <input type="checkbox" id="showPwCheckLogin" style="cursor: pointer; width: 14px; height: 14px;" onchange="document.getElementById('passwordInput').type = this.checked ? 'text' : 'password';">
-                    <label for="showPwCheckLogin" style="cursor: pointer; font-size: 11px; font-weight: 600; color: #475569;">Show Password</label>
                 </div>
 
                 <button type="submit" class="btn btn-dark-full">LOG IN <i class="fa-solid fa-arrow-right"></i></button>

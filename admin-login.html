@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DriveSphere Enterprise - Admin Login</title>
     <link rel="stylesheet" href="css/global.css">
+    <!-- Restored FontAwesome so your icons load properly -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="admin-page-bg">
@@ -13,14 +15,13 @@
     <header class="enterprise-header">
         <div class="container eh-container">
             
-            <!-- 1. Left: Enterprise Logo -->
-            <div class="ent-logo-group">
-                <div class="logo">
-                    <img src="images/DriveSphere_logo.jpg" alt="DriveSphere Logo">
-                </div>
+            <!-- 1. Left: Enterprise Logo (Restored the correct structure) -->
+            <div class="logo">
+                <a href="index.html" class="site-logo">
+                    <img src="images/DriveSphere_logo.jpg" alt="DriveSphere Enterprise" class="header-logo-img">
+                </a>
                 <div class="ent-logo-text">
-                    <div class="ent-logo-title">DriveSphere <span class="ent-badge">ENTERPRISE</span>
-                    </div>
+                    <div class="ent-logo-title">DriveSphere <span class="ent-badge">ENTERPRISE</span></div>
                     <div class="ent-logo-subtitle">Philippine Mobility & Fleet</div>
                 </div>
             </div>
@@ -42,7 +43,6 @@
                 <a href="help.html" class="eh-help"><i class="fa-regular fa-circle-question"></i> Help Center</a>
                 <button class="eh-user-icon"><i class="fa-solid fa-user"></i></button>
             </div>
-
         </div>
     </header>
 
@@ -93,24 +93,37 @@
                     <div class="input-icon-wrapper admin-input">
                         <i class="fa-solid fa-lock"></i>
                         <input type="password" placeholder="Enter your password" id="adminPasswordInput" required>
+                        <!-- Interactive eye icon toggle -->
+                        <i class="fa-regular fa-eye toggle-pw" id="toggleAdminPwIcon" onclick="
+                            const pwInput = document.getElementById('adminPasswordInput'); 
+                            if(pwInput.type === 'password') { 
+                                pwInput.type = 'text'; 
+                                this.classList.replace('fa-eye', 'fa-eye-slash'); 
+                            } else { 
+                                pwInput.type = 'password'; 
+                                this.classList.replace('fa-eye-slash', 'fa-eye'); 
+                            }"></i>
                     </div>
                 </div>
 
-                <!-- SHOW PASSWORD CHECKBOX (INLINE SCRIPT) -->
-                <div class="checkbox-row" style="margin-top: -8px; margin-bottom: 24px;">
-                    <input type="checkbox" id="showPwCheckAdmin" style="cursor: pointer; width: 14px; height: 14px;" onchange="document.getElementById('adminPasswordInput').type = this.checked ? 'text' : 'password';">
-                    <label for="showPwCheckAdmin" style="cursor: pointer; font-size: 11px; font-weight: 600; color: #475569;">Show Password</label>
+                <!-- HARDWARE TOKEN CHECKBOX -->
+                <div class="checkbox-row" style="margin-top: 16px; margin-bottom: 24px;">
+                    <input type="checkbox" id="enforceHardware" checked style="accent-color: #0284c7;">
+                    <label for="enforceHardware">Enforce Hardware Token / Keep signed in on this dispatch console</label>
                 </div>
 
-                <button type="submit" class="btn-dark-full" style="background: #0f172a;">LOGIN <i class="fa-solid fa-arrow-right"></i></button>
+                <button type="submit" class="btn-dark-full" style="background: #0f172a; width: 100%;">LOGIN <i class="fa-solid fa-arrow-right"></i></button>
             </form>
 
-            <div class="lc-footer" style="border-top: none; padding-top: 16px;">
-                <p>Don't have a registered Fleet Administrator account? <a href="#">Register Account</a></p>
-                <a href="login.html" class="switch-portal-btn">SWITCH TO CUSTOMER PORTAL LOGIN <i class="fa-solid fa-arrow-right"></i></a>
+                <!-- ==========================================
+                    FIXED SEPARATED REDIRECT LINKS 
+                    ========================================== -->
+            <div class="lc-footer">
+                <p>Don't have a registered Fleet Administrator account? <a href="admin-register.html">Register Account</a></p>
+                <p class="fleet-switch"><a href="login.html">SWITCH TO CUSTOMER PORTAL LOGIN &rarr;</a></p>
             </div>
             
-            <div class="admin-card-bottom-bar">
+            <div class="admin-card-bottom-bar" style="margin-top: 32px;">
                 <span><i class="fa-solid fa-microchip"></i> FIPS 140-2 Level 3 Ready</span>
                 <span><i class="fa-solid fa-server"></i> NCR Hub #02</span>
             </div>
